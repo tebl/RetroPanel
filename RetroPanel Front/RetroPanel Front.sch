@@ -233,7 +233,7 @@ F 3 "~" H 1725 6800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text GLabel 1375 6150 0    50   Output ~ 0
-SW_RES1
+SW_RESET1
 NoConn ~ 1925 6050
 Wire Wire Line
 	1925 6900 2000 6900
@@ -252,7 +252,7 @@ Wire Wire Line
 Wire Wire Line
 	2000 6250 1925 6250
 Text GLabel 2075 6900 2    50   Output ~ 0
-SW_RES2
+SW_RESET2
 Wire Wire Line
 	2000 6900 2075 6900
 Connection ~ 2000 6900
@@ -373,54 +373,6 @@ Entry Wire Line
 	7700 2175 7800 2275
 Wire Bus Line
 	4800 2775 7800 2775
-Text Label 8775 3225 0    50   ~ 0
-7S_A
-Text Label 8775 3325 0    50   ~ 0
-7S_B
-Text Label 8775 3425 0    50   ~ 0
-7S_C
-Text Label 8775 3525 0    50   ~ 0
-7S_D
-Text Label 8775 3625 0    50   ~ 0
-7S_E
-Text Label 8775 3725 0    50   ~ 0
-7S_F
-Text Label 8775 3825 0    50   ~ 0
-7S_G
-Text Label 8775 3925 0    50   ~ 0
-7S_DP
-Wire Wire Line
-	8750 3225 9050 3225
-Wire Wire Line
-	8750 3325 9050 3325
-Wire Wire Line
-	8750 3425 9050 3425
-Wire Wire Line
-	8750 3525 9050 3525
-Wire Wire Line
-	8750 3625 9050 3625
-Wire Wire Line
-	8750 3725 9050 3725
-Wire Wire Line
-	8750 3825 9050 3825
-Wire Wire Line
-	8750 3925 9050 3925
-Text Label 8775 4025 0    50   ~ 0
-7S_D1
-Text Label 8775 4125 0    50   ~ 0
-7S_D2
-Text Label 8775 4225 0    50   ~ 0
-7S_D3
-Text Label 8775 4325 0    50   ~ 0
-7S_D4
-Wire Wire Line
-	9050 4025 8750 4025
-Wire Wire Line
-	9050 4125 8750 4125
-Wire Wire Line
-	9050 4225 8750 4225
-Wire Wire Line
-	9050 4325 8750 4325
 Wire Wire Line
 	9050 5425 8975 5425
 Wire Wire Line
@@ -429,46 +381,26 @@ Wire Wire Line
 	8975 3125 9050 3125
 Wire Wire Line
 	8975 5425 8975 5500
-Text GLabel 8750 4425 0    50   Input ~ 0
+Text GLabel 8975 3225 0    50   Input ~ 0
 SW_PWR1
-Text GLabel 8750 4525 0    50   Input ~ 0
+Text GLabel 8975 3325 0    50   Input ~ 0
 SW_PWR2
-Text GLabel 8750 4625 0    50   Output ~ 0
+Text GLabel 8975 3425 0    50   Output ~ 0
 LED_PWR1
-Text GLabel 8750 4725 0    50   Input ~ 0
+Text GLabel 8975 3525 0    50   Input ~ 0
 LED_PWR2
-Text GLabel 8750 4825 0    50   Input ~ 0
+Text GLabel 8975 5025 0    50   Input ~ 0
 SW_TURBO1
-Text GLabel 8750 4925 0    50   Input ~ 0
+Text GLabel 8975 5125 0    50   Input ~ 0
 SW_TURBO2
-Text GLabel 8750 5025 0    50   Output ~ 0
+Text GLabel 8975 5225 0    50   Output ~ 0
 LED_TURBO1
-Text GLabel 8750 5125 0    50   Input ~ 0
+Text GLabel 8975 5325 0    50   Input ~ 0
 LED_TURBO2
-Text GLabel 8750 5225 0    50   Input ~ 0
-SW_RES1
-Text GLabel 8750 5325 0    50   Input ~ 0
-SW_RES2
-Wire Wire Line
-	8750 4425 9050 4425
-Wire Wire Line
-	8750 4525 9050 4525
-Wire Wire Line
-	8750 4625 9050 4625
-Wire Wire Line
-	8750 4725 9050 4725
-Wire Wire Line
-	8750 4825 9050 4825
-Wire Wire Line
-	8750 4925 9050 4925
-Wire Wire Line
-	8750 5025 9050 5025
-Wire Wire Line
-	8750 5125 9050 5125
-Wire Wire Line
-	8750 5225 9050 5225
-Wire Wire Line
-	8750 5325 9050 5325
+Text GLabel 8975 3625 0    50   Input ~ 0
+SW_RESET1
+Text GLabel 8975 3725 0    50   Input ~ 0
+SW_RESET2
 $Comp
 L power:PWR_FLAG #FLG0101
 U 1 1 63693A74
@@ -493,37 +425,105 @@ F 3 "~" H 8975 3125 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Entry Wire Line
-	8750 3625 8650 3525
+	8200 4225 8100 4125
 Entry Wire Line
-	8750 3725 8650 3625
+	8200 4325 8100 4225
 Entry Wire Line
-	8750 3825 8650 3725
+	8200 4425 8100 4325
 Entry Wire Line
-	8750 3925 8650 3825
+	8200 4525 8100 4425
 Entry Wire Line
-	8750 4025 8650 3925
+	8200 4625 8100 4525
 Entry Wire Line
-	8750 4125 8650 4025
+	8200 4725 8100 4625
 Entry Wire Line
-	8750 4225 8650 4125
+	8200 4825 8100 4725
 Entry Wire Line
-	8750 4325 8650 4225
+	8200 4925 8100 4825
 Entry Wire Line
-	8750 3225 8650 3125
+	8200 3825 8100 3725
 Entry Wire Line
-	8750 3325 8650 3225
+	8200 3925 8100 3825
 Entry Wire Line
-	8750 3425 8650 3325
+	8200 4025 8100 3925
 Entry Wire Line
-	8750 3525 8650 3425
+	8200 4125 8100 4025
 Connection ~ 8975 3125
+Connection ~ 7800 2775
+Wire Wire Line
+	8975 3225 9050 3225
+Wire Wire Line
+	8975 3325 9050 3325
+Wire Wire Line
+	8975 3425 9050 3425
+Wire Wire Line
+	8975 3525 9050 3525
+Wire Wire Line
+	8975 3625 9050 3625
+Wire Wire Line
+	8975 3725 9050 3725
+Wire Wire Line
+	8975 5025 9050 5025
+Wire Wire Line
+	8975 5125 9050 5125
+Wire Wire Line
+	8975 5225 9050 5225
+Wire Wire Line
+	8975 5325 9050 5325
+Wire Wire Line
+	8200 3825 9050 3825
 Wire Bus Line
-	8650 2775 7800 2775
+	8100 2775 7800 2775
+Text Label 8225 3825 0    50   ~ 0
+7S_D1
+Text Label 8225 4925 0    50   ~ 0
+7S_B
+Text Label 8225 4425 0    50   ~ 0
+7S_C
+Text Label 8225 4225 0    50   ~ 0
+7S_D
+Text Label 8225 4525 0    50   ~ 0
+7S_G
+Text Label 8225 4325 0    50   ~ 0
+7S_DP
+Text Label 8225 4725 0    50   ~ 0
+7S_D2
+Text Label 8225 4825 0    50   ~ 0
+7S_D3
+Text Label 8225 4625 0    50   ~ 0
+7S_D4
+Wire Wire Line
+	8200 3925 9050 3925
+Wire Wire Line
+	8200 4025 9050 4025
+Wire Wire Line
+	8200 4125 9050 4125
+Wire Wire Line
+	8200 4225 9050 4225
+Wire Wire Line
+	8200 4325 9050 4325
+Wire Wire Line
+	8200 4425 9050 4425
+Wire Wire Line
+	8200 4525 9050 4525
+Wire Wire Line
+	8200 4625 9050 4625
+Wire Wire Line
+	8200 4725 9050 4725
+Wire Wire Line
+	8200 4825 9050 4825
+Wire Wire Line
+	8200 4925 9050 4925
 Wire Bus Line
 	7800 2275 7800 2775
 Wire Bus Line
 	4800 1875 4800 2775
 Wire Bus Line
-	8650 2775 8650 4225
-Connection ~ 7800 2775
+	8100 2775 8100 4825
+Text Label 8225 3925 0    50   ~ 0
+7S_A
+Text Label 8225 4025 0    50   ~ 0
+7S_F
+Text Label 8225 4125 0    50   ~ 0
+7S_E
 $EndSCHEMATC
