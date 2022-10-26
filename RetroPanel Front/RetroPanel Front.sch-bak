@@ -27,12 +27,12 @@ $EndComp
 $Comp
 L power:GND #PWR0101
 U 1 1 6282785A
-P 8975 5500
-F 0 "#PWR0101" H 8975 5250 50  0001 C CNN
-F 1 "GND" H 8980 5327 50  0000 C CNN
-F 2 "" H 8975 5500 50  0001 C CNN
-F 3 "" H 8975 5500 50  0001 C CNN
-	1    8975 5500
+P 8975 5700
+F 0 "#PWR0101" H 8975 5450 50  0001 C CNN
+F 1 "GND" H 8980 5527 50  0000 C CNN
+F 2 "" H 8975 5700 50  0001 C CNN
+F 3 "" H 8975 5700 50  0001 C CNN
+	1    8975 5700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -374,13 +374,13 @@ Entry Wire Line
 Wire Bus Line
 	4800 2775 7800 2775
 Wire Wire Line
-	9050 5425 8975 5425
+	9050 5625 8975 5625
 Wire Wire Line
 	8975 3050 8975 3125
 Wire Wire Line
 	8975 3125 9050 3125
 Wire Wire Line
-	8975 5425 8975 5500
+	8975 5625 8975 5700
 Text GLabel 8975 3225 0    50   Input ~ 0
 SW_PWR1
 Text GLabel 8975 3325 0    50   Input ~ 0
@@ -389,13 +389,13 @@ Text GLabel 8975 3425 0    50   Output ~ 0
 LED_PWR1
 Text GLabel 8975 3525 0    50   Input ~ 0
 LED_PWR2
-Text GLabel 8975 5025 0    50   Input ~ 0
+Text GLabel 8975 5225 0    50   Input ~ 0
 SW_TURBO1
-Text GLabel 8975 5125 0    50   Input ~ 0
-SW_TURBO2
-Text GLabel 8975 5225 0    50   Output ~ 0
-LED_TURBO1
 Text GLabel 8975 5325 0    50   Input ~ 0
+SW_TURBO2
+Text GLabel 8975 5425 0    50   Output ~ 0
+LED_TURBO1
+Text GLabel 8975 5525 0    50   Input ~ 0
 LED_TURBO2
 Text GLabel 8975 3625 0    50   Input ~ 0
 SW_RESET1
@@ -463,20 +463,20 @@ Wire Wire Line
 Wire Wire Line
 	8975 3725 9050 3725
 Wire Wire Line
-	8975 5025 9050 5025
-Wire Wire Line
-	8975 5125 9050 5125
-Wire Wire Line
 	8975 5225 9050 5225
 Wire Wire Line
 	8975 5325 9050 5325
+Wire Wire Line
+	8975 5425 9050 5425
+Wire Wire Line
+	8975 5525 9050 5525
 Wire Wire Line
 	8200 3825 9050 3825
 Wire Bus Line
 	8100 2775 7800 2775
 Text Label 8225 3825 0    50   ~ 0
 7S_D1
-Text Label 6725 4250 0    50   ~ 0
+Text Label 8225 4925 0    50   ~ 0
 7S_B
 Text Label 8225 4425 0    50   ~ 0
 7S_C
@@ -486,9 +486,9 @@ Text Label 8225 4525 0    50   ~ 0
 7S_G
 Text Label 8225 4325 0    50   ~ 0
 7S_DP
-Text Label 6875 3900 0    50   ~ 0
+Text Label 8225 4725 0    50   ~ 0
 7S_D2
-Text Label 6725 5150 0    50   ~ 0
+Text Label 8225 4825 0    50   ~ 0
 7S_D3
 Text Label 8225 4625 0    50   ~ 0
 7S_D4
@@ -514,16 +514,66 @@ Wire Wire Line
 	8200 4825 9050 4825
 Wire Wire Line
 	8200 4925 9050 4925
-Wire Bus Line
-	7800 2275 7800 2775
-Wire Bus Line
-	4800 1875 4800 2775
-Wire Bus Line
-	8100 2775 8100 4825
 Text Label 8225 3925 0    50   ~ 0
 7S_A
 Text Label 8225 4025 0    50   ~ 0
 7S_F
 Text Label 8225 4125 0    50   ~ 0
 7S_E
+$Comp
+L Switch:SW_DPDT_x2 SW4
+U 1 1 6374F345
+P 4225 6150
+F 0 "SW4" H 4225 6435 50  0000 C CNN
+F 1 "EXTRA" H 4225 6344 50  0000 C CNN
+F 2 "6pin_switch:dpdt_switch_black" H 4225 6150 50  0001 C CNN
+F 3 "~" H 4225 6150 50  0001 C CNN
+	1    4225 6150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_DPDT_x2 SW4
+U 2 1 6374F34B
+P 4225 6800
+F 0 "SW4" H 4225 7085 50  0000 C CNN
+F 1 "EXTRA" H 4225 6994 50  0000 C CNN
+F 2 "6pin_switch:dpdt_switch_black" H 4225 6800 50  0001 C CNN
+F 3 "~" H 4225 6800 50  0001 C CNN
+	2    4225 6800
+	1    0    0    -1  
+$EndComp
+Text GLabel 3950 6150 0    50   Output ~ 0
+SW_EXTRA1
+Wire Wire Line
+	3950 6150 4025 6150
+NoConn ~ 4425 6050
+NoConn ~ 4025 6800
+NoConn ~ 4425 6700
+Wire Wire Line
+	4425 6900 4500 6900
+Wire Wire Line
+	4500 6900 4500 6250
+Wire Wire Line
+	4500 6250 4425 6250
+Text GLabel 4575 6900 2    50   Output ~ 0
+SW_EXTRA2
+Wire Wire Line
+	4500 6900 4575 6900
+Connection ~ 4500 6900
+Text Notes 3400 7175 0    50   ~ 0
+An extra switch for future proofing (meaning\nI did not know what to do with it).
+Text GLabel 8975 5025 0    50   Input ~ 0
+SW_EXTRA1
+Text GLabel 8975 5125 0    50   Input ~ 0
+SW_EXTRA2
+Wire Wire Line
+	8975 5025 9050 5025
+Wire Wire Line
+	8975 5125 9050 5125
+Wire Bus Line
+	7800 2275 7800 2775
+Wire Bus Line
+	4800 1875 4800 2775
+Wire Bus Line
+	8100 2775 8100 4825
 $EndSCHEMATC
