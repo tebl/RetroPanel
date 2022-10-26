@@ -4,7 +4,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "BulkyModem (Panel)"
+Title "BulkyModem (Front)"
 Date ""
 Rev "A"
 Comp ""
@@ -93,12 +93,12 @@ $EndComp
 $Comp
 L power:GND #PWR0111
 U 1 1 6282AADA
-P 11100 875
-F 0 "#PWR0111" H 11100 625 50  0001 C CNN
-F 1 "GND" H 11105 702 50  0000 C CNN
-F 2 "" H 11100 875 50  0001 C CNN
-F 3 "" H 11100 875 50  0001 C CNN
-	1    11100 875 
+P 11100 1250
+F 0 "#PWR0111" H 11100 1000 50  0001 C CNN
+F 1 "GND" H 11105 1077 50  0000 C CNN
+F 2 "" H 11100 1250 50  0001 C CNN
+F 3 "" H 11100 1250 50  0001 C CNN
+	1    11100 1250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -117,8 +117,6 @@ Wire Wire Line
 Connection ~ 10975 800 
 Wire Wire Line
 	10975 800  11100 800 
-Wire Wire Line
-	11100 800  11100 875 
 Connection ~ 11100 800 
 $Comp
 L Switch:SW_DPDT_x2 SW1
@@ -570,6 +568,106 @@ Wire Wire Line
 	8975 5025 9050 5025
 Wire Wire Line
 	8975 5125 9050 5125
+$Comp
+L mounting:Mounting_Pad M5
+U 1 1 637825FA
+P 10975 950
+F 0 "M5" H 10975 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 10975 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10975 950 50  0001 C CNN
+F 3 "~" H 10975 950 50  0001 C CNN
+	1    10975 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11100 800  11100 1175
+Connection ~ 11100 1175
+Wire Wire Line
+	11100 1175 11100 1250
+$Comp
+L mounting:Mounting_Pad M8
+U 1 1 6378DDBA
+P 10850 950
+F 0 "M8" H 10850 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 10850 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10850 950 50  0001 C CNN
+F 3 "~" H 10850 950 50  0001 C CNN
+	1    10850 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pad M7
+U 1 1 63790274
+P 10725 950
+F 0 "M7" H 10725 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 10725 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10725 950 50  0001 C CNN
+F 3 "~" H 10725 950 50  0001 C CNN
+	1    10725 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pad M6
+U 1 1 637928C6
+P 10600 950
+F 0 "M6" H 10600 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 10600 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10600 950 50  0001 C CNN
+F 3 "~" H 10600 950 50  0001 C CNN
+	1    10600 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10975 1100 10975 1175
+Connection ~ 10975 1175
+Wire Wire Line
+	10975 1175 11100 1175
+Wire Wire Line
+	10850 1100 10850 1175
+Connection ~ 10850 1175
+Wire Wire Line
+	10850 1175 10975 1175
+Wire Wire Line
+	10725 1100 10725 1175
+Connection ~ 10725 1175
+Wire Wire Line
+	10725 1175 10850 1175
+$Comp
+L mounting:Mounting_Pad M10
+U 1 1 637AD750
+P 10475 950
+F 0 "M10" H 10475 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 10475 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10475 950 50  0001 C CNN
+F 3 "~" H 10475 950 50  0001 C CNN
+	1    10475 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pad M9
+U 1 1 637AD756
+P 10350 950
+F 0 "M9" H 10350 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 10350 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10350 950 50  0001 C CNN
+F 3 "~" H 10350 950 50  0001 C CNN
+	1    10350 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10350 1100 10350 1175
+Wire Wire Line
+	10350 1175 10475 1175
+Wire Wire Line
+	10475 1100 10475 1175
+Connection ~ 10475 1175
+Wire Wire Line
+	10475 1175 10600 1175
+Wire Wire Line
+	10600 1100 10600 1175
+Connection ~ 10600 1175
+Wire Wire Line
+	10600 1175 10725 1175
 Wire Bus Line
 	7800 2275 7800 2775
 Wire Bus Line
