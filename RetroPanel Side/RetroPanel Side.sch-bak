@@ -96,17 +96,6 @@ Connection ~ 11100 1175
 Wire Wire Line
 	11100 1175 11100 1250
 $Comp
-L mounting:Mounting_Pad M8
-U 1 1 6378DDBA
-P 10850 950
-F 0 "M8" H 10850 1050 50  0001 C CNN
-F 1 "Mounting_Pad" H 10850 875 50  0001 C CNN
-F 2 "RetroPanel:Pad_pin" H 10850 950 50  0001 C CNN
-F 3 "~" H 10850 950 50  0001 C CNN
-	1    10850 950 
-	1    0    0    -1  
-$EndComp
-$Comp
 L mounting:Mounting_Pad M7
 U 1 1 63790274
 P 10725 950
@@ -200,10 +189,10 @@ Wire Wire Line
 	10350 1175 10225 1175
 Connection ~ 10350 1175
 $Comp
-L mounting:Mounting_Pad M?
+L mounting:Mounting_Pad M11
 U 1 1 635B4DD6
 P 10100 950
-F 0 "M?" H 10100 1050 50  0001 C CNN
+F 0 "M11" H 10100 1050 50  0001 C CNN
 F 1 "Mounting_Pad" H 10100 875 50  0001 C CNN
 F 2 "RetroPanel:Pad_pin" H 10100 950 50  0001 C CNN
 F 3 "~" H 10100 950 50  0001 C CNN
@@ -215,4 +204,36 @@ Wire Wire Line
 Wire Wire Line
 	10100 1175 10225 1175
 Connection ~ 10225 1175
+$Comp
+L mounting:Mounting_Pad M12
+U 1 1 635B6874
+P 9975 950
+F 0 "M12" H 9975 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 9975 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 9975 950 50  0001 C CNN
+F 3 "~" H 9975 950 50  0001 C CNN
+	1    9975 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9975 1100 9975 1175
+Wire Wire Line
+	9975 1175 10100 1175
+Connection ~ 10100 1175
+$Comp
+L mounting:Mounting_Pad M13
+U 1 1 635B7F85
+P 9850 950
+F 0 "M13" H 9850 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 9850 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 9850 950 50  0001 C CNN
+F 3 "~" H 9850 950 50  0001 C CNN
+	1    9850 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9850 1100 9850 1175
+Wire Wire Line
+	9850 1175 9975 1175
+Connection ~ 9975 1175
 $EndSCHEMATC

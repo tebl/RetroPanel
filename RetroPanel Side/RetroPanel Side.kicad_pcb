@@ -113,19 +113,19 @@
   )
 
   (module RetroPanel:Pad_pin (layer F.Cu) (tedit 6359AF0E) (tstamp 6359B513)
-    (at 103.0916 93.6898 180)
+    (at 103.8155 98.4904 270)
     (descr "module 1 pin (ou trou mecanique de percage)")
     (tags DEV)
     (path /637AD750)
-    (fp_text reference M10 (at 0 -4.445) (layer F.Fab) hide
+    (fp_text reference M10 (at 0 -4.445 90) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value Mounting_Pad (at 0 -3.175) (layer F.Fab) hide
+    (fp_text value Mounting_Pad (at 0 -3.175 90) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (pad 1 smd rect (at 0 0 180) (size 3 4.4) (layers B.Cu B.Paste B.Mask)
+    (pad 1 smd rect (at 0 0 270) (size 3 4.4) (layers B.Cu B.Paste B.Mask)
       (net 1 GND))
-    (pad 1 smd rect (at 0 0 180) (size 3 4.4) (layers F.Cu F.Paste F.Mask)
+    (pad 1 smd rect (at 0 0 270) (size 3 4.4) (layers F.Cu F.Paste F.Mask)
       (net 1 GND))
   )
 
@@ -225,8 +225,8 @@
     (fp_text value Mounting_Pin (at 0 3) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_circle (center 0 0) (end 2 0.8) (layer F.Fab) (width 0.1))
     (fp_circle (center 0 0) (end 2.6 0) (layer F.CrtYd) (width 0.05))
+    (fp_circle (center 0 0) (end 2 0.8) (layer F.Fab) (width 0.1))
     (pad 1 thru_hole circle (at 0 0) (size 3.5 3.5) (drill 3.048) (layers *.Cu *.Mask)
       (net 1 GND) (solder_mask_margin 0.8))
   )
@@ -242,8 +242,8 @@
     (fp_text value Mounting_Pin (at 0 3) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_circle (center 0 0) (end 2.6 0) (layer F.CrtYd) (width 0.05))
     (fp_circle (center 0 0) (end 2 0.8) (layer F.Fab) (width 0.1))
+    (fp_circle (center 0 0) (end 2.6 0) (layer F.CrtYd) (width 0.05))
     (pad 1 thru_hole circle (at 0 0) (size 3.5 3.5) (drill 3.048) (layers *.Cu *.Mask)
       (net 1 GND) (solder_mask_margin 0.8))
   )
@@ -259,8 +259,8 @@
     (fp_text value Mounting_Pin (at 0 3) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_circle (center 0 0) (end 2.6 0) (layer F.CrtYd) (width 0.05))
     (fp_circle (center 0 0) (end 2 0.8) (layer F.Fab) (width 0.1))
+    (fp_circle (center 0 0) (end 2.6 0) (layer F.CrtYd) (width 0.05))
     (pad 1 thru_hole circle (at 0 0) (size 3.5 3.5) (drill 3.048) (layers *.Cu *.Mask)
       (net 1 GND) (solder_mask_margin 0.8))
   )

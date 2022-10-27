@@ -96,17 +96,6 @@ Connection ~ 11100 1175
 Wire Wire Line
 	11100 1175 11100 1250
 $Comp
-L mounting:Mounting_Pad M8
-U 1 1 6378DDBA
-P 10850 950
-F 0 "M8" H 10850 1050 50  0001 C CNN
-F 1 "Mounting_Pad" H 10850 875 50  0001 C CNN
-F 2 "RetroPanel:Pad_pin" H 10850 950 50  0001 C CNN
-F 3 "~" H 10850 950 50  0001 C CNN
-	1    10850 950 
-	1    0    0    -1  
-$EndComp
-$Comp
 L mounting:Mounting_Pad M7
 U 1 1 63790274
 P 10725 950
@@ -247,4 +236,15 @@ Wire Wire Line
 Wire Wire Line
 	9850 1175 9975 1175
 Connection ~ 9975 1175
+$Comp
+L mounting:Mounting_Pad M8
+U 1 1 6378DDBA
+P 10850 950
+F 0 "M8" H 10850 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 10850 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10850 950 50  0001 C CNN
+F 3 "~" H 10850 950 50  0001 C CNN
+	1    10850 950 
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
