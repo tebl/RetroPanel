@@ -1,5 +1,10 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP +5VSB
+D +5V Standby
+K power-flag
+$ENDCMP
+#
 $CMP 3641AH
 D 0.36" 4 digit 7 segment Red LED, common cathode
 K display LED
