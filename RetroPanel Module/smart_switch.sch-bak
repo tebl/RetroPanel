@@ -278,14 +278,16 @@ F 3 "~" H 7475 3475 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:PWR_FLAG #FLG?
+L power:PWR_FLAG #FLG0101
 U 1 1 639556AC
 P 5675 2875
-F 0 "#FLG?" H 5675 2950 50  0001 C CNN
+F 0 "#FLG0101" H 5675 2950 50  0001 C CNN
 F 1 "PWR_FLAG" H 5675 3048 50  0000 C CNN
 F 2 "" H 5675 2875 50  0001 C CNN
 F 3 "~" H 5675 2875 50  0001 C CNN
 	1    5675 2875
 	1    0    0    -1  
 $EndComp
+Text Notes 8025 3200 0    50   ~ 0
+Note that the colours assigned in the specification\nmight not actually match the cable that you have,\nin particular the cheap extensions and ATX to AT\ncable harnesses may have shuffled these around\ndepending on what they had on hand.
 $EndSCHEMATC
