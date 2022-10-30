@@ -1,4 +1,4 @@
-update=31.10.2022 00:05:51
+update=31.10.2022 00:49:42
 version=1
 last_client=kicad
 [general]
@@ -15,7 +15,7 @@ LibDir=
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=RetroPanel Front.net
+LastNetListRead=RetroPanel FP1.net
 CopperLayerCount=2
 BoardThickness=1.6
 AllowMicroVias=0
@@ -250,7 +250,7 @@ dPairViaGap=0.25
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=../documentation/schematic/
+PlotDirectoryName=../../documentation/schematic/faceplates/
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=Pcbnew

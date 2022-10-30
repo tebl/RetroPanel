@@ -17,9 +17,9 @@ $Comp
 L RetroPanel:Front_Panel J1
 U 1 1 62825997
 P 9250 4125
-F 0 "J1" H 9200 5325 50  0000 L CNN
-F 1 "Front Panel" H 9200 5250 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x26_P2.54mm_Horizontal" H 9250 4125 50  0001 C CNN
+F 0 "J1" H 9200 5425 50  0000 L CNN
+F 1 "Front Panel" H 9350 5425 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x28_P2.54mm_Horizontal" H 9250 4125 50  0001 C CNN
 F 3 "~" H 9250 4125 50  0001 C CNN
 	1    9250 4125
 	1    0    0    -1  
@@ -27,23 +27,23 @@ $EndComp
 $Comp
 L power:GND #PWR0101
 U 1 1 6282785A
-P 8975 5700
-F 0 "#PWR0101" H 8975 5450 50  0001 C CNN
-F 1 "GND" H 8980 5527 50  0000 C CNN
-F 2 "" H 8975 5700 50  0001 C CNN
-F 3 "" H 8975 5700 50  0001 C CNN
-	1    8975 5700
+P 8975 5900
+F 0 "#PWR0101" H 8975 5650 50  0001 C CNN
+F 1 "GND" H 8980 5727 50  0000 C CNN
+F 2 "" H 8975 5900 50  0001 C CNN
+F 3 "" H 8975 5900 50  0001 C CNN
+	1    8975 5900
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:VCC #PWR0102
 U 1 1 62828DC5
-P 8975 3050
-F 0 "#PWR0102" H 8975 2900 50  0001 C CNN
-F 1 "VCC" H 8990 3223 50  0000 C CNN
-F 2 "" H 8975 3050 50  0001 C CNN
-F 3 "" H 8975 3050 50  0001 C CNN
-	1    8975 3050
+P 8975 2850
+F 0 "#PWR0102" H 8975 2700 50  0001 C CNN
+F 1 "VCC" H 8990 3023 50  0000 C CNN
+F 2 "" H 8975 2850 50  0001 C CNN
+F 3 "" H 8975 2850 50  0001 C CNN
+	1    8975 2850
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -372,13 +372,13 @@ Entry Wire Line
 Wire Bus Line
 	4800 2775 7800 2775
 Wire Wire Line
-	9050 5625 8975 5625
+	9050 5825 8975 5825
 Wire Wire Line
-	8975 3050 8975 3125
+	8975 2850 8975 2925
 Wire Wire Line
-	8975 3125 9050 3125
+	8975 2925 9050 2925
 Wire Wire Line
-	8975 5625 8975 5700
+	8975 5825 8975 5900
 Text GLabel 8975 3225 0    50   Input ~ 0
 SW_PWR1
 Text GLabel 8975 3325 0    50   Input ~ 0
@@ -387,13 +387,13 @@ Text GLabel 8975 3425 0    50   Output ~ 0
 LED_PWR1
 Text GLabel 8975 3525 0    50   Input ~ 0
 LED_PWR2
-Text GLabel 8975 5225 0    50   Input ~ 0
+Text GLabel 8975 5425 0    50   Input ~ 0
 SW_TURBO1
-Text GLabel 8975 5325 0    50   Input ~ 0
-SW_TURBO2
-Text GLabel 8975 5425 0    50   Output ~ 0
-LED_TURBO1
 Text GLabel 8975 5525 0    50   Input ~ 0
+SW_TURBO2
+Text GLabel 8975 5625 0    50   Output ~ 0
+LED_TURBO1
+Text GLabel 8975 5725 0    50   Input ~ 0
 LED_TURBO2
 Text GLabel 8975 3625 0    50   Input ~ 0
 SW_RESET1
@@ -414,12 +414,12 @@ Connection ~ 10725 800
 $Comp
 L power:PWR_FLAG #FLG0102
 U 1 1 63696E94
-P 8975 3125
-F 0 "#FLG0102" H 8975 3200 50  0001 C CNN
-F 1 "PWR_FLAG" V 8975 3252 50  0001 L CNN
-F 2 "" H 8975 3125 50  0001 C CNN
-F 3 "~" H 8975 3125 50  0001 C CNN
-	1    8975 3125
+P 8975 2925
+F 0 "#FLG0102" H 8975 3000 50  0001 C CNN
+F 1 "PWR_FLAG" V 8975 3052 50  0001 L CNN
+F 2 "" H 8975 2925 50  0001 C CNN
+F 3 "~" H 8975 2925 50  0001 C CNN
+	1    8975 2925
 	0    -1   -1   0   
 $EndComp
 Entry Wire Line
@@ -446,7 +446,7 @@ Entry Wire Line
 	8200 4025 8100 3925
 Entry Wire Line
 	8200 4125 8100 4025
-Connection ~ 8975 3125
+Connection ~ 8975 2925
 Connection ~ 7800 2775
 Wire Wire Line
 	8975 3225 9050 3225
@@ -461,13 +461,13 @@ Wire Wire Line
 Wire Wire Line
 	8975 3725 9050 3725
 Wire Wire Line
-	8975 5225 9050 5225
-Wire Wire Line
-	8975 5325 9050 5325
-Wire Wire Line
 	8975 5425 9050 5425
 Wire Wire Line
 	8975 5525 9050 5525
+Wire Wire Line
+	8975 5625 9050 5625
+Wire Wire Line
+	8975 5725 9050 5725
 Wire Wire Line
 	8200 3825 9050 3825
 Wire Bus Line
@@ -560,14 +560,14 @@ Wire Wire Line
 Connection ~ 4500 6900
 Text Notes 3400 7175 0    50   ~ 0
 An extra switch for future proofing (meaning\nI did not know what to do with it).
-Text GLabel 8975 5025 0    50   Input ~ 0
+Text GLabel 8975 5225 0    50   Input ~ 0
 SW_EXTRA1
-Text GLabel 8975 5125 0    50   Input ~ 0
+Text GLabel 8975 5325 0    50   Input ~ 0
 SW_EXTRA2
 Wire Wire Line
-	8975 5025 9050 5025
+	8975 5225 9050 5225
 Wire Wire Line
-	8975 5125 9050 5125
+	8975 5325 9050 5325
 $Comp
 L mounting:Mounting_Pad M5
 U 1 1 637825FA
@@ -587,23 +587,12 @@ Wire Wire Line
 $Comp
 L mounting:Mounting_Pad M7
 U 1 1 63790274
-P 10725 950
-F 0 "M7" H 10725 1050 50  0001 C CNN
-F 1 "Mounting_Pad" H 10725 875 50  0001 C CNN
-F 2 "RetroPanel:Pad_pin" H 10725 950 50  0001 C CNN
-F 3 "~" H 10725 950 50  0001 C CNN
-	1    10725 950 
-	1    0    0    -1  
-$EndComp
-$Comp
-L mounting:Mounting_Pad M6
-U 1 1 637928C6
-P 10600 950
-F 0 "M6" H 10600 1050 50  0001 C CNN
-F 1 "Mounting_Pad" H 10600 875 50  0001 C CNN
-F 2 "RetroPanel:Pad_pin" H 10600 950 50  0001 C CNN
-F 3 "~" H 10600 950 50  0001 C CNN
-	1    10600 950 
+P 10850 950
+F 0 "M7" H 10850 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 10850 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10850 950 50  0001 C CNN
+F 3 "~" H 10850 950 50  0001 C CNN
+	1    10850 950 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -612,46 +601,64 @@ Connection ~ 10975 1175
 Wire Wire Line
 	10975 1175 11100 1175
 Wire Wire Line
-	10725 1100 10725 1175
-Connection ~ 10725 1175
+	10850 1100 10850 1175
 $Comp
 L mounting:Mounting_Pad M10
 U 1 1 637AD750
-P 10475 950
-F 0 "M10" H 10475 1050 50  0001 C CNN
-F 1 "Mounting_Pad" H 10475 875 50  0001 C CNN
-F 2 "RetroPanel:Pad_pin" H 10475 950 50  0001 C CNN
-F 3 "~" H 10475 950 50  0001 C CNN
-	1    10475 950 
+P 10725 950
+F 0 "M10" H 10725 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 10725 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10725 950 50  0001 C CNN
+F 3 "~" H 10725 950 50  0001 C CNN
+	1    10725 950 
 	1    0    0    -1  
 $EndComp
 $Comp
 L mounting:Mounting_Pad M9
 U 1 1 637AD756
-P 10350 950
-F 0 "M9" H 10350 1050 50  0001 C CNN
-F 1 "Mounting_Pad" H 10350 875 50  0001 C CNN
-F 2 "RetroPanel:Pad_pin" H 10350 950 50  0001 C CNN
-F 3 "~" H 10350 950 50  0001 C CNN
-	1    10350 950 
+P 10600 950
+F 0 "M9" H 10600 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 10600 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10600 950 50  0001 C CNN
+F 3 "~" H 10600 950 50  0001 C CNN
+	1    10600 950 
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	10350 1100 10350 1175
-Wire Wire Line
-	10350 1175 10475 1175
-Wire Wire Line
-	10475 1100 10475 1175
-Connection ~ 10475 1175
-Wire Wire Line
-	10475 1175 10600 1175
-Wire Wire Line
 	10600 1100 10600 1175
-Connection ~ 10600 1175
+Wire Wire Line
+	10725 1100 10725 1175
+Connection ~ 10850 1175
+Wire Wire Line
+	10850 1175 10975 1175
 Wire Wire Line
 	10600 1175 10725 1175
+Connection ~ 10725 1175
 Wire Wire Line
-	10725 1175 10975 1175
+	10725 1175 10850 1175
+Text GLabel 6075 4700 3    50   Output ~ 0
+LED_HDD2
+Text GLabel 6075 4400 1    50   Input ~ 0
+LED_HDD1
+$Comp
+L Device:LED D3
+U 1 1 635F5BF2
+P 6075 4550
+F 0 "D3" V 6114 4432 50  0000 R CNN
+F 1 "HDD" V 6023 4432 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 6075 4550 50  0001 C CNN
+F 3 "~" H 6075 4550 50  0001 C CNN
+	1    6075 4550
+	0    -1   -1   0   
+$EndComp
+Text GLabel 8975 5025 0    50   Output ~ 0
+LED_HDD1
+Text GLabel 8975 5125 0    50   Input ~ 0
+LED_HDD2
+Wire Wire Line
+	8975 5125 9050 5125
+Wire Wire Line
+	9050 5025 8975 5025
 Wire Bus Line
 	7800 2275 7800 2775
 Wire Bus Line
