@@ -14,8 +14,7 @@
 .dsn
 
 resources/
-BulkyModem Module/export/
-BulkyModem Module Panel/export/
-BulkyModem UserPort Adapter/export/
-faceplates/BulkyModem FA1/export/
-faceplates/BulkyModem FP1/export/
+RetroPanel Front/export/
+RetroPanel Module/export/
+RetroPanel Side/export/
+faceplates/RetroPanel FP1/export/

@@ -1,4 +1,4 @@
-19053920100886125
+19067257847500972
 6pin_switch
 6pin tactile switch
 
@@ -76290,8 +76290,8 @@ Module_Panel
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
 rotary encoder
 0
-26
-26
+30
+30
 RetroPanel
 Molex_KK-254_1x04_P2.54mm_Horizontal
 Molex KK-254 Interconnect System, old/engineering part number: AE-6410-02A example for new part number: 22-27-2021, 2 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator
@@ -76328,7 +76328,63 @@ Through hole pin header THT 1x04 2.54mm single row
 4
 4
 RetroPanel
+icon_extra
+
+
+0
+0
+0
+RetroPanel
+icon_hdd
+
+
+0
+0
+0
+RetroPanel
+icon_power
+
+
+0
+0
+0
+RetroPanel
+icon_reset
+
+
+0
+0
+0
+RetroPanel
+icon_running
+
+
+0
+0
+0
+RetroPanel
+icon_slow
+
+
+0
+0
+0
+RetroPanel
+icon_turbo
+
+
+0
+0
+0
+RetroPanel
 logo
+
+
+0
+0
+0
+RetroPanel
+logo_small
 
 
 0
