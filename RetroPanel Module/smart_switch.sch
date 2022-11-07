@@ -38,7 +38,7 @@ F 3 "~" H 7250 4850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 7350 5025 0    50   ~ 0
-(BLACK)
+(Black)
 Text Notes 7350 3675 0    50   ~ 0
 (Green)
 $Comp
@@ -53,7 +53,7 @@ F 3 "~" H 7250 2900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 7350 3075 0    50   ~ 0
-(Grey)
+(Purple)
 $Comp
 L Timer:NE555P U2
 U 1 1 63659578

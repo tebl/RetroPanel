@@ -239,7 +239,7 @@ L RetroPanel:Front_Panel J1
 U 1 1 62825997
 P 10525 2850
 F 0 "J1" H 10475 4150 50  0000 L CNN
-F 1 "Front Panel" H 10475 3975 50  0000 L CNN
+F 1 "Front Panel" H 10625 4150 50  0000 L CNN
 F 2 "RetroPanel:Module_Panel" H 10525 2850 50  0001 C CNN
 F 3 "~" H 10525 2850 50  0001 C CNN
 	1    10525 2850
@@ -443,17 +443,6 @@ F 3 "~" H 7225 2100 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Diode:1N4001 D1
-U 1 1 635B47F3
-P 7275 1375
-F 0 "D1" V 7321 1295 50  0000 R CNN
-F 1 "1N4001" V 7230 1295 50  0000 R CNN
-F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 7275 1200 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 7275 1375 50  0001 C CNN
-	1    7275 1375
-	0    -1   -1   0   
-$EndComp
-$Comp
 L Connector_Generic:Conn_01x02 J4
 U 1 1 635BC0CC
 P 2875 4725
@@ -611,12 +600,12 @@ $EndComp
 $Comp
 L power:+5V #PWR0106
 U 1 1 6371FCA6
-P 725 1650
-F 0 "#PWR0106" H 725 1500 50  0001 C CNN
-F 1 "+5V" H 725 1790 50  0000 C CNN
-F 2 "" H 725 1650 50  0000 C CNN
-F 3 "" H 725 1650 50  0000 C CNN
-	1    725  1650
+P 725 1350
+F 0 "#PWR0106" H 725 1200 50  0001 C CNN
+F 1 "+5V" H 725 1490 50  0000 C CNN
+F 2 "" H 725 1350 50  0000 C CNN
+F 3 "" H 725 1350 50  0000 C CNN
+	1    725  1350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1314,7 +1303,7 @@ Wire Wire Line
 Wire Wire Line
 	8525 2175 8525 2250
 Text Notes 7850 1775 0    50   ~ 0
-Some pentium-era machines only have\nLED, but no switch so we may need to\nread voltage going to LED. If using switch,\nflip cable if mode seems "stuck".
+Some pentium-era machines only have\nLED, but no switch so we may need to\nread voltage going to LED. If using switch,\nflip cable if the mode seems "stuck".
 Text Notes 6400 4100 0    50   ~ 0
 Can connect a diagnostic card - OR - install\nArduino for controlling 7 segment display.
 $Comp
@@ -1507,10 +1496,21 @@ Text GLabel 10250 3850 0    50   Output ~ 0
 LED_HDD2
 Wire Wire Line
 	10250 3850 10325 3850
-Wire Bus Line
-	5925 1300 5925 3850
+$Comp
+L Diode:1N4001 D1
+U 1 1 635B47F3
+P 725 1500
+F 0 "D1" V 771 1420 50  0000 R CNN
+F 1 "1N4001" V 680 1420 50  0000 R CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 725 1325 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 725 1500 50  0001 C CNN
+	1    725  1500
+	0    -1   1    0   
+$EndComp
 Wire Bus Line
 	7950 4200 7950 4700
+Wire Bus Line
+	5925 1300 5925 3850
 Wire Bus Line
 	8450 2450 8450 3850
 Wire Bus Line
