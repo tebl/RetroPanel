@@ -46,6 +46,18 @@ void hex_display_write(uint8_t digit, char character, bool dp) {
   else hex_dp[digit] = dp;
 }
 
+/* Output the specified character array to hex displays.
+ *
+ * WARNING! This does not have a delimiter and assumes that it is at least
+ *          4 characters long.
+ */
+void hex_display_set(char *c) {
+  hex_display_write(0, c[0], false);
+  hex_display_write(1, c[1], false);
+  hex_display_write(2, c[2], false);
+  hex_display_write(3, c[3], false);
+}
+
 uint8_t pin_from_digit(uint8_t digit) {
   switch (digit) {
   case 0: return PIN_7S_DIGIT_1;

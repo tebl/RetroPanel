@@ -59,12 +59,16 @@ void help_command(const __FlashStringHelper *command = nullptr,
 */
 void print_help() {
   ansi_colour_ln(F("Commands supported:"), COLOUR_MAGENTA);
-  help_command(F("ansi on"),            F("Enable ANSI terminal code usage"));
-  help_command(F("ansi off"),           F("Disable ANSI terminal code usage"));
+  help_command(F("ansi <on|off>"),      F("Enable/disable ANSI terminal code usage"));
   help_command(F("ansi test"),          F("Test ANSI terminal codes on terminal"));
+  help_command(F("boot"),               F("Boot message status"));
+  help_command(F("boot <on|off>"),      F("Enable/disable boot message"));
   help_command(F("clear"),              F("Clear screen"));
   help_command(F("reload"),             F("Reload settings from EEPROM"));  
   help_command(F("save"),               F("Save current settings to EEPROM"));
   help_command(F("scratch"),            F("Clear settings in EEPROM (reset afterwards)"));
+  help_command(F("test <hi|lo|boot>"),  F("Test messages stored on display"));
+  help_command(F("turbo"),              F("Turbo message status"));
+  help_command(F("turbo <on|off>"),     F("Enable/disable turbo message"));
   help_command(F("version"),            F("Prints firmware version"));
 }
