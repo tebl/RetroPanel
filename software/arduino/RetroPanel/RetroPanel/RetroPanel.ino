@@ -8,8 +8,7 @@ void setup() {
 
   pinMode(PIN_PWR, OUTPUT);
   analogWrite(PIN_PWR, DEFAULT_LED_PWR);
-
-  pinMode(PIN_TURBO, INPUT_PULLUP);
+  pinMode(PIN_TURBO, INPUT);
 
   hex_display_init();
 }
