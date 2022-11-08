@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "constants.h"
+#include "settings.h"
 
 char hex_values[4] = {0, 0, 0, 0};
 bool hex_dp[4] = {0, 0, 0, 0};
