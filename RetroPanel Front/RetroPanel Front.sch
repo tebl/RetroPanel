@@ -291,7 +291,7 @@ L RetroPanel:3641AH U1
 U 1 1 635D0ECA
 P 6300 2075
 F 0 "U1" H 6300 2742 50  0000 C CNN
-F 1 "3641AH" H 6300 2651 50  0000 C CNN
+F 1 "4bit 7-Segment Display" H 6300 2651 50  0000 C CNN
 F 2 "RetroPanel:3641AH" H 6300 1475 50  0001 C CNN
 F 3 "http://www.kingbright.com/attachments/file/psearch/000/00/00/CA56-12CGKWA(Ver.9A).pdf" H 5870 2105 50  0001 C CNN
 	1    6300 2075
@@ -665,4 +665,6 @@ Wire Bus Line
 	4800 1875 4800 2775
 Wire Bus Line
 	8100 2775 8100 4825
+Text Notes 5525 3425 0    50   ~ 0
+3641AH (CK, Common Kathode)\n3642BH (CA, Common Anode)\n\nProvisions in place for using both types\nof displays with Arduino on main module,\nbut note that only C.A. will function with\nExternal Diagnostic Card connector.
 $EndSCHEMATC
