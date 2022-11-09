@@ -47,22 +47,22 @@ void restore_settings() {
                 case 2: boot_enabled = EEPROM.read(i) == 1; break;
 
                 // Boot message
-                case 19: EEPROM.read(i); break;
-                case 20: EEPROM.read(i); break;
-                case 21: EEPROM.read(i); break;
-                case 22: EEPROM.read(i); break;
+                case 19: str_boot[0] = EEPROM.read(i); break;
+                case 20: str_boot[1] = EEPROM.read(i); break;
+                case 21: str_boot[2] = EEPROM.read(i); break;
+                case 22: str_boot[3] = EEPROM.read(i); break;
 
                 // LO-value
-                case 23: EEPROM.read(i); break;
-                case 24: EEPROM.read(i); break;
-                case 25: EEPROM.read(i); break;
-                case 26: EEPROM.read(i); break;
+                case 23: str_lo[0] = EEPROM.read(i); break;
+                case 24: str_lo[1] = EEPROM.read(i); break;
+                case 25: str_lo[2] = EEPROM.read(i); break;
+                case 26: str_lo[3] = EEPROM.read(i); break;
 
                 // HI-value
-                case 27: EEPROM.read(i); break;
-                case 28: EEPROM.read(i); break;
-                case 29: EEPROM.read(i); break;
-                case 30: EEPROM.read(i); break;
+                case 27: str_hi[0] = EEPROM.read(i); break;
+                case 28: str_hi[1] = EEPROM.read(i); break;
+                case 29: str_hi[2] = EEPROM.read(i); break;
+                case 30: str_hi[3] = EEPROM.read(i); break;
                 
                 default:
                     break;

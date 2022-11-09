@@ -18,3 +18,4 @@
 #define DEFAULT_BOOT_3 't'
 
 #define ACTIVITY_THRESHOLD 10000
+#define SUPPORT_URL "https://github.com/tebl/RetroPanel"

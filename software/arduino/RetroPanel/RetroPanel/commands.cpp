@@ -1,5 +1,6 @@
 #include <Arduino.h>
 #include "constants.h"
+#include "settings.h"
 #include "ansi.h"
 #include "help.h"
 #include "storage.h"
@@ -12,6 +13,32 @@ extern char str_lo[4];
 extern char str_hi[4];
 extern char str_boot[4];
 extern unsigned long last_activity;
+
+/* Called when a recognized command has been recognized, but before the
+* function is actually called.
+*/
+void echo_command(String command) {
+  ansi_colour(COLOUR_CYAN);
+  Serial.println("> "+ command);
+  ansi_default();
+}
+
+/* Called when the entered command has not been recognized, we don't know
+* what to do next so we'll just print it as an error instead.
+*/
+void echo_unknown(String command) {
+  ansi_error();
+  Serial.println("? " + command);
+  ansi_default();
+}
+
+void do_support() {
+  Serial.println(F("For support, please visit:"));
+  Serial.println();
+  Serial.print(' ');
+  Serial.print(' ');
+  Serial.println(F(SUPPORT_URL));
+}
 
 void print_display_str(char *c) {
   for (int i = 0; i < 4; i++) {
@@ -35,7 +62,7 @@ void boot_status() {
     ansi_highlight_ln(F("OFF"));
   }
   Serial.print(F("Value: \""));
-  ansi_highlight();
+  ansi_notice();
   print_display_str(str_boot);
   ansi_default();
   Serial.println('\"');
@@ -60,13 +87,13 @@ void turbo_status() {
   }
 
   Serial.print(F("Value LO: \""));
-  ansi_highlight();
+  ansi_notice();
   print_display_str(str_lo);
   ansi_default();
   Serial.println('\"');
 
   Serial.print(F("Value HI: \""));
-  ansi_highlight();
+  ansi_notice();
   print_display_str(str_hi);
   ansi_default();
   Serial.println('\"');
@@ -133,25 +160,44 @@ bool handle_set(String c) {
   hex_display_write(2, c[6]);
   hex_display_write(3, c[7]);
   last_activity = millis();
+  echo_command(c);
   return true;
 }
 
-/* Called when a recognized command has been recognized, but before the
-* function is actually called.
-*/
-void echo_command(String command) {
-  ansi_colour(COLOUR_CYAN);
-  Serial.println("> "+ command);
-  ansi_default();
+bool handle_set_boot(String c) {
+  if (c.length() != 13) return parser_error(c, F("argument format"));
+  str_boot[0] = c[9];
+  str_boot[1] = c[10];
+  str_boot[2] = c[11];
+  str_boot[3] = c[12];
+  echo_command(c);
+  set_boot();
+  boot_status();
+  return true;
 }
 
-/* Called when the entered command has not been recognized, we don't know
-* what to do next so we'll just print it as an error instead.
-*/
-void echo_unknown(String command) {
-  ansi_error();
-  Serial.println("? " + command);
-  ansi_default();
+bool handle_set_hi(String c) {
+  if (c.length() != 17) return parser_error(c, F("argument format"));
+  str_hi[0] = c[13];
+  str_hi[1] = c[14];
+  str_hi[2] = c[15];
+  str_hi[3] = c[16];
+  echo_command(c);
+  set_hi();
+  turbo_status();
+  return true;
+}
+
+bool handle_set_lo(String c) {
+  if (c.length() != 17) return parser_error(c, F("argument format"));
+  str_lo[0] = c[13];
+  str_lo[1] = c[14];
+  str_lo[2] = c[15];
+  str_lo[3] = c[16];
+  echo_command(c);
+  set_lo();
+  turbo_status();
+  return true;
 }
 
 /* Clear the serial terminal screen, but note that this won't actually do
@@ -184,18 +230,22 @@ void select_command_main(String command) {
   else if (handle_command(command, F("boot"), boot_status));
   else if (handle_command(command, F("boot on"), boot_on));
   else if (handle_command(command, F("boot off"), boot_off));
+  else if (command.startsWith(F("boot set"))) handle_set_boot(command);
   else if (handle_command(command, F("ansi test"), ansi_test));
   else if (handle_command(command, F("clear"), do_clear));
   else if (handle_command(command, F("dump"), dump_settings));
   else if (handle_command(command, F("help"), print_help));
   else if (handle_command(command, F("reload"), restore_settings));
   else if (handle_command(command, F("scratch"), do_scratch_settings));
+  else if (handle_command(command, F("support"), do_support));
   else if (handle_command(command, F("test boot"), set_boot));
   else if (handle_command(command, F("test hi"), set_hi));
   else if (handle_command(command, F("test lo"), set_lo));
   else if (handle_command(command, F("turbo"), turbo_status));
   else if (handle_command(command, F("turbo on"), turbo_on));
-  else if (handle_command(command, F("turbo off"), turbo_off));  
+  else if (handle_command(command, F("turbo off"), turbo_off));
+  else if (command.startsWith(F("turbo set hi"))) handle_set_hi(command);
+  else if (command.startsWith(F("turbo set lo"))) handle_set_lo(command);
   else if (handle_command(command, F("save"), store_settings));
   else if (handle_command(command, F("version"), print_version));
   else if (command.startsWith(F("set"))) handle_set(command);
