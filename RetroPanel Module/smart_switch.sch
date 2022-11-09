@@ -9,7 +9,7 @@ Date ""
 Rev "A"
 Comp ""
 Comment1 ""
-Comment2 "latching switch is installed on the front and then wired to the ATX to AT cables."
+Comment2 "latching switch can be installed on the front and then wired to the ATX to AT cables."
 Comment3 "to shut down when one of its outputs have been shorted. If the circuit is not needed, a"
 Comment4 "Circuit for using standard ATX-case with ATX to AT-kits, the circuit allows the PSU "
 $EndDescr
@@ -288,6 +288,6 @@ F 3 "~" H 5450 2900 50  0001 C CNN
 	1    5450 2900
 	1    0    0    -1  
 $EndComp
-Text Notes 7800 3225 0    50   ~ 0
-Note that the colours assigned in the specification\nmight not actually match the cable that you have,\nin particular the cheap extensions and ATX to AT\ncable harnesses may have shuffled these around\ndepending on what they had on hand.
+Text Notes 7800 4125 0    50   ~ 0
+Note that the colours assigned in the specification\nmight not actually match the cable that you have,\nin particular the cheap extensions and ATX to AT\ncable harnesses may have shuffled these around\ndepending on what they had on hand. Usually you\ncan find the correct orientation when looking at \nthe three orange 3.3v cables clustered together at\nthe top.\n\nThe easiest way to create the necessary cable\nis to purchase both a cheap ATX-extension cable\nas well as an ATX to AT converter cable. You should\nalready have the black and green pigtail, the purple\none can be stolen directly from the extension. The\ngrey cable needs to be spliced because it'll be going\nto both the switching circuit as well as the MB.
 $EndSCHEMATC

@@ -1124,7 +1124,7 @@ L Transistor_BJT:2N3904 Q1
 U 1 1 63FD429D
 P 5325 1100
 F 0 "Q1" V 5560 1100 50  0000 C CNN
-F 1 "2N3904" V 5651 1100 50  0000 C CNN
+F 1 "2N3904/2N3906" V 5651 1100 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 5525 1025 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5325 1100 50  0001 L CNN
 	1    5325 1100
@@ -1156,7 +1156,7 @@ L Transistor_BJT:2N3904 Q2
 U 1 1 6409DF7D
 P 5325 1925
 F 0 "Q2" V 5560 1925 50  0000 C CNN
-F 1 "2N3904" V 5651 1925 50  0000 C CNN
+F 1 "2N3904/2N3906" V 5651 1925 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 5525 1850 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5325 1925 50  0001 L CNN
 	1    5325 1925
@@ -1188,7 +1188,7 @@ L Transistor_BJT:2N3904 Q3
 U 1 1 640B273A
 P 5325 2750
 F 0 "Q3" V 5560 2750 50  0000 C CNN
-F 1 "2N3904" V 5651 2750 50  0000 C CNN
+F 1 "2N3904/2N3906" V 5651 2750 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 5525 2675 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5325 2750 50  0001 L CNN
 	1    5325 2750
@@ -1220,7 +1220,7 @@ L Transistor_BJT:2N3904 Q4
 U 1 1 640B2753
 P 5325 3575
 F 0 "Q4" V 5560 3575 50  0000 C CNN
-F 1 "2N3904" V 5651 3575 50  0000 C CNN
+F 1 "2N3904/2N3906" V 5651 3575 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 5525 3500 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5325 3575 50  0001 L CNN
 	1    5325 3575
@@ -1414,8 +1414,8 @@ Wire Wire Line
 	4500 3975 4425 3975
 Wire Wire Line
 	4425 3900 4425 3975
-Text Notes 4200 4525 0    50   ~ 0
-Determines if 7 segment display is CA or\nCK - link 1-2 for CK display. When using\nCA-display, install Q1-Q4 backwards.
+Text Notes 4225 4800 0    50   ~ 0
+7S_TYPE Determines if 7 segment display to be\ninstalled is CA or CK - link 1-2 when used with CK\ndisplay.\n\nWhen using CA-display, link pins 2-3 as well as \nreplacing 2N3904 with 2N3906 instead.
 $Comp
 L Device:Speaker LS1
 U 1 1 63891002
