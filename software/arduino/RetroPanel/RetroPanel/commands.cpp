@@ -9,6 +9,7 @@
 extern bool ansi_enabled;
 extern bool turbo_enabled;
 extern bool boot_enabled;
+extern uint8_t display_type;
 extern char str_lo[4];
 extern char str_hi[4];
 extern char str_boot[4];
@@ -76,6 +77,25 @@ void boot_on() {
 void boot_off() {
   boot_enabled = false;
   boot_status();
+}
+
+void display_status() {
+  Serial.print(F("Display type set to "));
+  if (display_type == DISPLAY_TYPE_CA) {
+    ansi_notice_ln(F("CA"));
+  } else {
+    ansi_notice_ln(F("CK"));
+  }
+}
+
+void display_set_ca() {
+  display_type = DISPLAY_TYPE_CA;
+  display_status();
+}
+
+void display_set_ck() {
+  display_type = DISPLAY_TYPE_CK;
+  display_status();
 }
 
 void turbo_status() {
@@ -227,12 +247,15 @@ void select_command_main(String command) {
        if (handle_command(command, F("ansi"), ansi_status));
   else if (handle_command(command, F("ansi on"), ansi_on));
   else if (handle_command(command, F("ansi off"), ansi_off));
+  else if (handle_command(command, F("ansi test"), ansi_test));
   else if (handle_command(command, F("boot"), boot_status));
   else if (handle_command(command, F("boot on"), boot_on));
   else if (handle_command(command, F("boot off"), boot_off));
   else if (command.startsWith(F("boot set"))) handle_set_boot(command);
-  else if (handle_command(command, F("ansi test"), ansi_test));
   else if (handle_command(command, F("clear"), do_clear));
+  else if (handle_command(command, F("display"), display_status));
+  else if (handle_command(command, F("display ca"), display_set_ca));
+  else if (handle_command(command, F("display ck"), display_set_ck));
   else if (handle_command(command, F("dump"), dump_settings));
   else if (handle_command(command, F("help"), print_help));
   else if (handle_command(command, F("reload"), restore_settings));

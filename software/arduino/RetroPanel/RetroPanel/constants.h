@@ -28,4 +28,7 @@
 #define PIN_7S_DIGIT_3 6
 #define PIN_7S_DIGIT_4 7
 
+#define DISPLAY_TYPE_CK 0
+#define DISPLAY_TYPE_CA 1
+
 const char STR_DONE[] PROGMEM  = "done!";

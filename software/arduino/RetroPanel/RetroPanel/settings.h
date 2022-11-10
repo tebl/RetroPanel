@@ -3,6 +3,7 @@
 #define DEFAULT_ANSI false
 #define DEFAULT_TURBO true
 #define DEFAULT_BOOT true
+#define DEFAULT_DISPLAY_TYPE DISPLAY_TYPE_CK
 
 #define DEFAULT_LO_0 0
 #define DEFAULT_LO_1 0
