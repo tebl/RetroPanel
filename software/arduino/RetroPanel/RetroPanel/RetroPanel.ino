@@ -9,6 +9,7 @@
 bool ansi_enabled = DEFAULT_ANSI;
 bool turbo_enabled = DEFAULT_TURBO;
 bool boot_enabled = DEFAULT_BOOT;
+uint8_t display_type = DEFAULT_DISPLAY_TYPE;
 
 unsigned long last_activity = 0;
 char str_lo[4] = {DEFAULT_LO_0, DEFAULT_LO_1, DEFAULT_LO_2, DEFAULT_LO_3};
