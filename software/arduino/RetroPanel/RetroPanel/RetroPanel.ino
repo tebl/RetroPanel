@@ -18,8 +18,6 @@ char str_boot[4] = {DEFAULT_BOOT_0, DEFAULT_BOOT_1, DEFAULT_BOOT_2, DEFAULT_BOOT
 
 void setup() {
   process_serial_init();
-  pinMode(LED_BUILTIN, OUTPUT);
-
   pinMode(PIN_PWR, OUTPUT);
   analogWrite(PIN_PWR, DEFAULT_LED_PWR);
   pinMode(PIN_TURBO, INPUT);
@@ -37,25 +35,24 @@ void setup() {
 int last_turbo = -1;
 int current_turbo = -1;
 void process_turbo() {
-  if (turbo_enabled) {
-    current_turbo = digitalRead(PIN_TURBO);
-    if (last_turbo != current_turbo) {
-      if (current_turbo == LOW) {
-        hex_display_set(str_lo);
-      } else {
-        hex_display_set(str_hi);
+  // Give other functions a chance to have something displayed
+  if (last_activity == 0 || ((millis() - last_activity) > ACTIVITY_THRESHOLD)) {
+    if (turbo_enabled) {
+      current_turbo = digitalRead(PIN_TURBO);
+      if (last_turbo != current_turbo) {
+        if (current_turbo == LOW) {
+          hex_display_set(str_lo);
+        } else {
+          hex_display_set(str_hi);
+        }
+        last_turbo = current_turbo;
       }
-      last_turbo = current_turbo;
     }
   }
 }
 
 void loop() {
   process_serial();
-
-  if (last_activity == 0 || ((millis() - last_activity) > ACTIVITY_THRESHOLD)) {
-    process_turbo();
-  }
-
+  process_turbo();
   hex_display_scan();
 }
