@@ -1124,7 +1124,7 @@ L Transistor_BJT:2N3904 Q1
 U 1 1 63FD429D
 P 5325 1100
 F 0 "Q1" V 5560 1100 50  0000 C CNN
-F 1 "2N3904/2N3906" V 5651 1100 50  0000 C CNN
+F 1 "2N3904 *" V 5651 1100 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 5525 1025 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5325 1100 50  0001 L CNN
 	1    5325 1100
@@ -1145,22 +1145,11 @@ L Device:R_Small R13
 U 1 1 64028527
 P 5150 825
 F 0 "R13" V 5300 750 50  0000 L CNN
-F 1 "10k" V 5225 750 50  0000 L CNN
+F 1 "3k3" V 5225 750 50  0000 L CNN
 F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 5150 825 50  0001 C CNN
 F 3 "~" H 5150 825 50  0001 C CNN
 	1    5150 825 
 	0    -1   1    0   
-$EndComp
-$Comp
-L Transistor_BJT:2N3904 Q2
-U 1 1 6409DF7D
-P 5325 1925
-F 0 "Q2" V 5560 1925 50  0000 C CNN
-F 1 "2N3904/2N3906" V 5651 1925 50  0000 C CNN
-F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 5525 1850 50  0001 L CIN
-F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5325 1925 50  0001 L CNN
-	1    5325 1925
-	0    1    1    0   
 $EndComp
 Text Label 5800 2025 2    50   ~ 0
 7S_D2
@@ -1177,7 +1166,7 @@ L Device:R_Small R14
 U 1 1 6409DF90
 P 5150 1650
 F 0 "R14" V 5300 1575 50  0000 L CNN
-F 1 "10k" V 5225 1575 50  0000 L CNN
+F 1 "3k3" V 5225 1575 50  0000 L CNN
 F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 5150 1650 50  0001 C CNN
 F 3 "~" H 5150 1650 50  0001 C CNN
 	1    5150 1650
@@ -1188,7 +1177,7 @@ L Transistor_BJT:2N3904 Q3
 U 1 1 640B273A
 P 5325 2750
 F 0 "Q3" V 5560 2750 50  0000 C CNN
-F 1 "2N3904/2N3906" V 5651 2750 50  0000 C CNN
+F 1 "2N3904 *" V 5651 2750 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 5525 2675 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5325 2750 50  0001 L CNN
 	1    5325 2750
@@ -1209,7 +1198,7 @@ L Device:R_Small R15
 U 1 1 640B274D
 P 5150 2475
 F 0 "R15" V 5300 2400 50  0000 L CNN
-F 1 "10k" V 5225 2400 50  0000 L CNN
+F 1 "3k3" V 5225 2400 50  0000 L CNN
 F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 5150 2475 50  0001 C CNN
 F 3 "~" H 5150 2475 50  0001 C CNN
 	1    5150 2475
@@ -1220,7 +1209,7 @@ L Transistor_BJT:2N3904 Q4
 U 1 1 640B2753
 P 5325 3575
 F 0 "Q4" V 5560 3575 50  0000 C CNN
-F 1 "2N3904/2N3906" V 5651 3575 50  0000 C CNN
+F 1 "2N3904 *" V 5651 3575 50  0000 C CNN
 F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 5525 3500 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5325 3575 50  0001 L CNN
 	1    5325 3575
@@ -1256,7 +1245,7 @@ L Device:R_Small R16
 U 1 1 640B2766
 P 5150 3300
 F 0 "R16" V 5300 3225 50  0000 L CNN
-F 1 "10k" V 5225 3225 50  0000 L CNN
+F 1 "3k3" V 5225 3225 50  0000 L CNN
 F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 5150 3300 50  0001 C CNN
 F 3 "~" H 5150 3300 50  0001 C CNN
 	1    5150 3300
@@ -1414,8 +1403,8 @@ Wire Wire Line
 	4500 3975 4425 3975
 Wire Wire Line
 	4425 3900 4425 3975
-Text Notes 4225 4950 0    50   ~ 0
-7S_TYPE Determines if 7 segment display to be\ninstalled is CA or CK - link 1-2 when used with CK\ndisplay.\n\nWhen using CA-display, link pins 2-3 as well as \nreplacing 2N3904 with 2N3906 instead. Note that\ndisplay needs to be CA variant when building it\nfor use with POST diagnostic card instead of Arduino.
+Text Notes 4225 5025 0    50   ~ 0
+7S_TYPE Determines if 7 segment display to be\ninstalled is CA or CK. Link pins 1-2 when used with\nCK display, 2-3 for CA.\n\n* When using CA-display with Arduino, you\nneed to replace Q1-Q4 with 2N3906 installed\nbackwards. CA-type of display is also needed\nwhen used with POST diagnostic card (without\nArduino installed).
 $Comp
 L Device:Speaker LS1
 U 1 1 63891002
@@ -1515,4 +1504,15 @@ Wire Bus Line
 	6650 4200 6650 5000
 Wire Bus Line
 	9375 2650 9375 3850
+$Comp
+L Transistor_BJT:2N3904 Q2
+U 1 1 6409DF7D
+P 5325 1925
+F 0 "Q2" V 5560 1925 50  0000 C CNN
+F 1 "2N3904 *" V 5651 1925 50  0000 C CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 5525 1850 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5325 1925 50  0001 L CNN
+	1    5325 1925
+	0    1    1    0   
+$EndComp
 $EndSCHEMATC
