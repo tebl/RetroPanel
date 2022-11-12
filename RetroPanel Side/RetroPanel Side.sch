@@ -19,7 +19,7 @@ U 1 1 6282631C
 P 10850 575
 F 0 "M1" H 10850 675 50  0001 C CNN
 F 1 "Mounting_Pin" H 10850 500 50  0001 C CNN
-F 2 "mounting:M3_pin" H 10850 575 50  0001 C CNN
+F 2 "mounting:M3_adjustable" H 10850 575 50  0001 C CNN
 F 3 "~" H 10850 575 50  0001 C CNN
 	1    10850 575 
 	1    0    0    -1  
@@ -30,7 +30,7 @@ U 1 1 62826824
 P 10975 575
 F 0 "M2" H 10975 675 50  0001 C CNN
 F 1 "Mounting_Pin" H 10975 500 50  0001 C CNN
-F 2 "mounting:M3_pin" H 10975 575 50  0001 C CNN
+F 2 "mounting:M3_big" H 10975 575 50  0001 C CNN
 F 3 "~" H 10975 575 50  0001 C CNN
 	1    10975 575 
 	1    0    0    -1  
@@ -247,4 +247,20 @@ F 3 "~" H 10850 950 50  0001 C CNN
 	1    10850 950 
 	1    0    0    -1  
 $EndComp
+$Comp
+L mounting:Mounting_Pad M14
+U 1 1 636EFA56
+P 9725 950
+F 0 "M14" H 9725 1050 50  0001 C CNN
+F 1 "Mounting_Pad" H 9725 875 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 9725 950 50  0001 C CNN
+F 3 "~" H 9725 950 50  0001 C CNN
+	1    9725 950 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9725 1100 9725 1175
+Wire Wire Line
+	9725 1175 9850 1175
+Connection ~ 9850 1175
 $EndSCHEMATC

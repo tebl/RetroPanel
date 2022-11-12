@@ -106,17 +106,6 @@ F 3 "~" H 10700 1000 50  0001 C CNN
 	1    10700 1000
 	1    0    0    -1  
 $EndComp
-$Comp
-L mounting:Mounting_Pad M6
-U 1 1 637928C6
-P 10575 1000
-F 0 "M6" H 10575 1100 50  0001 C CNN
-F 1 "Mounting_Pad" H 10575 925 50  0001 C CNN
-F 2 "RetroPanel:B.Pad_pin" H 10575 1000 50  0001 C CNN
-F 3 "~" H 10575 1000 50  0001 C CNN
-	1    10575 1000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10950 1150 10950 1225
 Connection ~ 10950 1225
@@ -135,19 +124,37 @@ Wire Wire Line
 $Comp
 L mounting:Mounting_Pad M10
 U 1 1 637AD750
+P 10575 1000
+F 0 "M10" H 10575 1100 50  0001 C CNN
+F 1 "Mounting_Pad" H 10575 925 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10575 1000 50  0001 C CNN
+F 3 "~" H 10575 1000 50  0001 C CNN
+	1    10575 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L mounting:Mounting_Pad M9
+U 1 1 6359FE8F
 P 10450 1000
-F 0 "M10" H 10450 1100 50  0001 C CNN
+F 0 "M9" H 10450 1100 50  0001 C CNN
 F 1 "Mounting_Pad" H 10450 925 50  0001 C CNN
 F 2 "RetroPanel:Pad_pin" H 10450 1000 50  0001 C CNN
 F 3 "~" H 10450 1000 50  0001 C CNN
 	1    10450 1000
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	10450 1150 10450 1225
+Wire Wire Line
+	10575 1150 10575 1225
+Connection ~ 10450 1225
+Connection ~ 11075 850 
+Connection ~ 10825 850 
 $Comp
-L mounting:Mounting_Pad M9
-U 1 1 6359FE8F
+L mounting:Mounting_Pad M11
+U 1 1 635B4DD6
 P 10325 1000
-F 0 "M9" H 10325 1100 50  0001 C CNN
+F 0 "M11" H 10325 1100 50  0001 C CNN
 F 1 "Mounting_Pad" H 10325 925 50  0001 C CNN
 F 2 "RetroPanel:Pad_pin" H 10325 1000 50  0001 C CNN
 F 3 "~" H 10325 1000 50  0001 C CNN
@@ -156,27 +163,13 @@ F 3 "~" H 10325 1000 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	10325 1150 10325 1225
-Wire Wire Line
-	10325 1225 10450 1225
-Wire Wire Line
-	10450 1150 10450 1225
-Connection ~ 10450 1225
-Wire Wire Line
-	10450 1225 10575 1225
-Wire Wire Line
-	10575 1150 10575 1225
-Connection ~ 10575 1225
-Wire Wire Line
-	10575 1225 10700 1225
-Connection ~ 11075 850 
-Connection ~ 10825 850 
 $Comp
-L mounting:Mounting_Pad M4
-U 1 1 635B1EEE
+L mounting:Mounting_Pad M12
+U 1 1 635B6874
 P 10200 1000
-F 0 "M4" H 10200 1100 50  0001 C CNN
+F 0 "M12" H 10200 1100 50  0001 C CNN
 F 1 "Mounting_Pad" H 10200 925 50  0001 C CNN
-F 2 "RetroPanel:B.Pad_pin" H 10200 1000 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 10200 1000 50  0001 C CNN
 F 3 "~" H 10200 1000 50  0001 C CNN
 	1    10200 1000
 	1    0    0    -1  
@@ -184,13 +177,13 @@ $EndComp
 Wire Wire Line
 	10200 1150 10200 1225
 Wire Wire Line
-	10325 1225 10200 1225
-Connection ~ 10325 1225
+	9950 1225 10075 1225
+Connection ~ 10075 1225
 $Comp
-L mounting:Mounting_Pad M11
-U 1 1 635B4DD6
+L mounting:Mounting_Pad M13
+U 1 1 635B7F85
 P 10075 1000
-F 0 "M11" H 10075 1100 50  0001 C CNN
+F 0 "M13" H 10075 1100 50  0001 C CNN
 F 1 "Mounting_Pad" H 10075 925 50  0001 C CNN
 F 2 "RetroPanel:Pad_pin" H 10075 1000 50  0001 C CNN
 F 3 "~" H 10075 1000 50  0001 C CNN
@@ -199,38 +192,6 @@ F 3 "~" H 10075 1000 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	10075 1150 10075 1225
-Wire Wire Line
-	10075 1225 10200 1225
-Connection ~ 10200 1225
-$Comp
-L mounting:Mounting_Pad M12
-U 1 1 635B6874
-P 9950 1000
-F 0 "M12" H 9950 1100 50  0001 C CNN
-F 1 "Mounting_Pad" H 9950 925 50  0001 C CNN
-F 2 "RetroPanel:Pad_pin" H 9950 1000 50  0001 C CNN
-F 3 "~" H 9950 1000 50  0001 C CNN
-	1    9950 1000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9950 1150 9950 1225
-Wire Wire Line
-	9950 1225 10075 1225
-Connection ~ 10075 1225
-$Comp
-L mounting:Mounting_Pad M13
-U 1 1 635B7F85
-P 9825 1000
-F 0 "M13" H 9825 1100 50  0001 C CNN
-F 1 "Mounting_Pad" H 9825 925 50  0001 C CNN
-F 2 "RetroPanel:Pad_pin" H 9825 1000 50  0001 C CNN
-F 3 "~" H 9825 1000 50  0001 C CNN
-	1    9825 1000
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9825 1150 9825 1225
 Wire Wire Line
 	9825 1225 9950 1225
 Connection ~ 9950 1225
@@ -387,35 +348,29 @@ Wire Wire Line
 $Comp
 L mounting:Mounting_Pad M14
 U 1 1 635E064A
-P 9700 1000
-F 0 "M14" H 9700 1100 50  0001 C CNN
-F 1 "Mounting_Pad" H 9700 925 50  0001 C CNN
-F 2 "RetroPanel:B.Pad_pin" H 9700 1000 50  0001 C CNN
-F 3 "~" H 9700 1000 50  0001 C CNN
-	1    9700 1000
+P 9950 1000
+F 0 "M14" H 9950 1100 50  0001 C CNN
+F 1 "Mounting_Pad" H 9950 925 50  0001 C CNN
+F 2 "RetroPanel:B.Pad_pin" H 9950 1000 50  0001 C CNN
+F 3 "~" H 9950 1000 50  0001 C CNN
+	1    9950 1000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9700 1150 9700 1225
-Wire Wire Line
-	9700 1225 9825 1225
-Connection ~ 9825 1225
+	9950 1150 9950 1225
 $Comp
 L mounting:Mounting_Pad M15
 U 1 1 635E5F23
-P 9575 1000
-F 0 "M15" H 9575 1100 50  0001 C CNN
-F 1 "Mounting_Pad" H 9575 925 50  0001 C CNN
-F 2 "RetroPanel:Pad_pin" H 9575 1000 50  0001 C CNN
-F 3 "~" H 9575 1000 50  0001 C CNN
-	1    9575 1000
+P 9825 1000
+F 0 "M15" H 9825 1100 50  0001 C CNN
+F 1 "Mounting_Pad" H 9825 925 50  0001 C CNN
+F 2 "RetroPanel:Pad_pin" H 9825 1000 50  0001 C CNN
+F 3 "~" H 9825 1000 50  0001 C CNN
+	1    9825 1000
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	9575 1150 9575 1225
-Wire Wire Line
-	9575 1225 9700 1225
-Connection ~ 9700 1225
+	9825 1150 9825 1225
 $Comp
 L mounting:Mounting_Pin M16
 U 1 1 635F4633
@@ -1345,7 +1300,7 @@ F0 "RS-232" 50
 F1 "rs232.sch" 50
 $EndSheet
 $Sheet
-S 2200 6700 1175 900 
+S 2200 6700 1350 900 
 U 63655027
 F0 "Smart Switch" 50
 F1 "smart_switch.sch" 50
@@ -1494,16 +1449,6 @@ F 3 "http://www.vishay.com/docs/88503/1n4001.pdf" H 725 1500 50  0001 C CNN
 	1    725  1500
 	0    -1   1    0   
 $EndComp
-Wire Bus Line
-	7950 4200 7950 4700
-Wire Bus Line
-	5925 1300 5925 3850
-Wire Bus Line
-	8450 2450 8450 3850
-Wire Bus Line
-	6650 4200 6650 5000
-Wire Bus Line
-	9375 2650 9375 3850
 $Comp
 L Transistor_BJT:2N3904 Q2
 U 1 1 6409DF7D
@@ -1515,4 +1460,27 @@ F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 5325 1925 50  0001 L 
 	1    5325 1925
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	10075 1225 10200 1225
+Wire Wire Line
+	10450 1225 10575 1225
+Connection ~ 10200 1225
+Connection ~ 10575 1225
+Wire Wire Line
+	10575 1225 10700 1225
+Wire Wire Line
+	10200 1225 10325 1225
+Connection ~ 10325 1225
+Wire Wire Line
+	10325 1225 10450 1225
+Wire Bus Line
+	7950 4200 7950 4700
+Wire Bus Line
+	5925 1300 5925 3850
+Wire Bus Line
+	8450 2450 8450 3850
+Wire Bus Line
+	6650 4200 6650 5000
+Wire Bus Line
+	9375 2650 9375 3850
 $EndSCHEMATC
