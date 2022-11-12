@@ -290,4 +290,46 @@ F 3 "~" H 5450 2900 50  0001 C CNN
 $EndComp
 Text Notes 7800 4125 0    50   ~ 0
 Note that the colours assigned in the specification\nmight not actually match the cable that you have,\nin particular the cheap extensions and ATX to AT\ncable harnesses may have shuffled these around\ndepending on what they had on hand. Usually you\ncan find the correct orientation when looking at \nthe three orange 3.3v cables clustered together at\nthe top.\n\nThe easiest way to create the necessary cable\nis to purchase both a cheap ATX-extension cable\nas well as an ATX to AT converter cable. You should\nalready have the black and green pigtail, the purple\none can be stolen directly from the extension. The\ngrey cable needs to be spliced because it'll be going\nto both the switching circuit as well as the MB.
+$Comp
+L Device:R_Small R?
+U 1 1 6379EE4C
+P 3725 3525
+AR Path="/6379EE4C" Ref="R?"  Part="1" 
+AR Path="/63655027/6379EE4C" Ref="R22"  Part="1" 
+F 0 "R22" H 3775 3475 50  0000 L CNN
+F 1 "470" H 3775 3550 50  0000 L CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 3725 3525 50  0001 C CNN
+F 3 "~" H 3725 3525 50  0001 C CNN
+	1    3725 3525
+	1    0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR0109
+U 1 1 6379FCF1
+P 3725 3625
+F 0 "#PWR0109" H 3725 3375 50  0001 C CNN
+F 1 "GND" H 3730 3452 50  0000 C CNN
+F 2 "" H 3725 3625 50  0001 C CNN
+F 3 "" H 3725 3625 50  0001 C CNN
+	1    3725 3625
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 637A2E72
+P 3725 3200
+F 0 "D2" V 3764 3082 50  0000 R CNN
+F 1 "STANDBY" V 3673 3082 50  0000 R CNN
+F 2 "LED_THT:LED_D5.0mm" H 3725 3200 50  0001 C CNN
+F 3 "~" H 3725 3200 50  0001 C CNN
+	1    3725 3200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3725 3425 3725 3350
+Wire Wire Line
+	3725 3050 3725 2900
+Wire Wire Line
+	3725 2900 4250 2900
+Connection ~ 4250 2900
 $EndSCHEMATC
