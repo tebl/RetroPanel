@@ -1247,7 +1247,7 @@ Wire Wire Line
 Text Notes 7850 1775 0    50   ~ 0
 Some pentium-era machines only have\nLED, but no switch so we may need to\nread voltage going to LED. If using switch,\nflip cable if the mode seems "stuck".
 Text Notes 6400 4100 0    50   ~ 0
-Can connect a diagnostic card - OR - install\nArduino for controlling 7 segment display.
+Can connect a diagnostic card - OR - install\nArduino for controlling 7-segment display.
 $Comp
 L solder_select:SolderJumper_3_Bridged12 JP4
 U 1 1 646B2E79

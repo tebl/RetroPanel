@@ -11,7 +11,7 @@ Comp ""
 Comment1 ""
 Comment2 ""
 Comment3 ""
-Comment4 "A faceplate suitable for early AT Pentium MBs."
+Comment4 "A faceplate with provisions for most features."
 $EndDescr
 $Comp
 L mounting:Mounting_Pin M1

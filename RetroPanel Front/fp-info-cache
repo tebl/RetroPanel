@@ -1,4 +1,4 @@
-19038926139877857
+19093343259386829
 6pin_switch
 6pin tactile switch
 
@@ -76265,12 +76265,138 @@ RetroPanel
 12
 12
 RetroPanel
+B.Pad_pin
+module 1 pin (ou trou mecanique de percage)
+DEV
+0
+1
+1
+RetroPanel
+CP_Radial_D4.0mm_P2.00mm_Custom
+CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor
+CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor
+0
+3
+2
+RetroPanel
+F.Pad_pin
+module 1 pin (ou trou mecanique de percage)
+DEV
+0
+1
+1
+RetroPanel
+IDC-RS-232-Female
+Through hole IDC box header, 2x05, 2.54mm pitch, DIN 41651 / IEC 60603-13, double rows, https://docs.google.com/spreadsheets/d/16SsEcesNF15N3Lb4niX7dcUr-NY5_MFPQhobNuNppn4/edit#gid=0
+Through hole vertical IDC box header THT 2x05 2.54mm double row
+0
+10
+10
+RetroPanel
+Module_Panel
+Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
+rotary encoder
+0
+30
+30
+RetroPanel
+Molex_KK-254_1x04_P2.54mm_Horizontal
+Molex KK-254 Interconnect System, old/engineering part number: AE-6410-02A example for new part number: 22-27-2021, 2 Pins (http://www.molex.com/pdm_docs/sd/022272021_sd.pdf), generated with kicad-footprint-generator
+connector Molex KK-254 side entry
+0
+4
+4
+RetroPanel
+PSU_Wire
+solder Pin_ diameter 1.3mm, hole diameter 1.3mm, length 11.0mm
+solder Pin_ pressfit
+0
+1
+1
+RetroPanel
 Pad_pin
 module 1 pin (ou trou mecanique de percage)
 DEV
 0
 2
 1
+RetroPanel
+PinHeader_1x02_P2.54mm_Vertical
+Through hole straight pin header, 1x02, 2.54mm pitch, single row
+Through hole pin header THT 1x02 2.54mm single row
+0
+2
+2
+RetroPanel
+PinHeader_1x04_P2.54mm_Vertical
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+RetroPanel
+icon_extra
+
+
+0
+0
+0
+RetroPanel
+icon_hdd
+
+
+0
+0
+0
+RetroPanel
+icon_power
+
+
+0
+0
+0
+RetroPanel
+icon_reset
+
+
+0
+0
+0
+RetroPanel
+icon_running
+
+
+0
+0
+0
+RetroPanel
+icon_slow
+
+
+0
+0
+0
+RetroPanel
+icon_turbo
+
+
+0
+0
+0
+RetroPanel
+logo
+
+
+0
+0
+0
+RetroPanel
+logo_small
+
+
+0
+0
+0
 Rotary_Encoder
 RotaryEncoder_Alps_EC11E-Switch_Vertical_H20mm
 Alps rotary encoder, EC12E... with switch, vertical shaft, http://www.alps.com/prod/info/E/HTML/Encoder/Incremental/EC11/EC11E15204A3.html
@@ -83061,6 +83187,20 @@ varistor SIOV
 0
 2
 2
+arduino_pro_micro
+Arduino_Pro_Micro
+
+
+0
+36
+24
+arduino_pro_micro
+Arduino_Pro_Micro_Reverse
+
+
+0
+36
+24
 mounting
 M2
 module 1 pin (ou trou mecanique de percage)
@@ -83076,9 +83216,100 @@ DEV
 0
 0
 mounting
+M3_adjustable
+module 1 pin (ou trou mecanique de percage)
+DEV
+0
+1
+1
+mounting
+M3_big
+module 1 pin (ou trou mecanique de percage)
+DEV
+0
+1
+1
+mounting
 M3_pin
 module 1 pin (ou trou mecanique de percage)
 DEV
 0
 1
 1
+pwr_drv
+PWR_DRV
+simple 4-pin terminal block, pitch 5.08mm, revamped version of bornier4
+terminal block bornier4
+0
+4
+4
+pwr_drv
+PWR_EXT
+simple 4-pin terminal block, pitch 5.08mm, revamped version of bornier4
+terminal block bornier4
+0
+3
+3
+pwr_drv
+PWR_IN
+simple 4-pin terminal block, pitch 5.08mm, revamped version of bornier4
+terminal block bornier4
+0
+4
+4
+resistor
+R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
+Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
+0
+2
+2
+resistor
+R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
+Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
+Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
+0
+2
+2
+solder_bridge
+bridge
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+2
+2
+solder_bridge
+bridge2
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+2
+2
+solder_bridge
+bridge_open
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+2
+2
+solder_bridge
+bridge_r
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+2
+2
+solder_bridge
+select
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+3
+3
+solder_bridge
+select2
+Through hole straight pin header, 1x02, 1.00mm pitch, single row
+Through hole pin header THT 1x02 1.00mm single row
+0
+3
+3

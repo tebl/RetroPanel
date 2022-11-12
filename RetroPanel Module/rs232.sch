@@ -158,7 +158,7 @@ U 1 1 635FEC2D
 P 7925 4000
 F 0 "J11" H 7975 4450 50  0000 C CNN
 F 1 "RS-232" H 7975 4375 50  0000 C CNN
-F 2 "Connector_IDC:IDC-Header_2x05_P2.54mm_Vertical" H 7925 4000 50  0001 C CNN
+F 2 "RetroPanel:IDC-RS-232-Female" H 7925 4000 50  0001 C CNN
 F 3 "~" H 7925 4000 50  0001 C CNN
 	1    7925 4000
 	1    0    0    -1  
@@ -166,52 +166,20 @@ $EndComp
 $Comp
 L power:GND #PWR0117
 U 1 1 635FEC33
-P 7575 4300
-F 0 "#PWR0117" H 7575 4050 50  0001 C CNN
-F 1 "GND" H 7580 4127 50  0000 C CNN
-F 2 "" H 7575 4300 50  0001 C CNN
-F 3 "" H 7575 4300 50  0001 C CNN
-	1    7575 4300
+P 7650 4275
+F 0 "#PWR0117" H 7650 4025 50  0001 C CNN
+F 1 "GND" H 7655 4102 50  0000 C CNN
+F 2 "" H 7650 4275 50  0001 C CNN
+F 3 "" H 7650 4275 50  0001 C CNN
+	1    7650 4275
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7575 4300 7575 4000
-NoConn ~ 7725 4200
-Wire Wire Line
-	7725 3800 7650 3800
-Wire Wire Line
-	7650 3800 7650 3700
-Wire Wire Line
-	7650 3700 8300 3700
-Wire Wire Line
-	8300 3700 8300 3900
-Wire Wire Line
-	8300 3900 8225 3900
-Wire Wire Line
-	8300 3900 8300 4000
-Wire Wire Line
-	8300 4000 8225 4000
-Connection ~ 8300 3900
-Text GLabel 7650 3900 0    50   Output ~ 0
+Text GLabel 7575 4000 0    50   Output ~ 0
 RS232_RX
-Wire Wire Line
-	7650 3900 7725 3900
-Wire Wire Line
-	7575 4000 7725 4000
-Wire Wire Line
-	7725 4100 7650 4100
-Wire Wire Line
-	7650 4100 7650 4300
-Wire Wire Line
-	7650 4300 8300 4300
-Wire Wire Line
-	8300 4300 8300 4100
-Wire Wire Line
-	8300 4100 8225 4100
-Text GLabel 8375 3800 2    50   Input ~ 0
+Text GLabel 7575 3900 0    50   Input ~ 0
 RS232_TX
 Wire Wire Line
-	8375 3800 8225 3800
+	7575 3900 7725 3900
 $Comp
 L Device:CP_Small C3
 U 1 1 63604F05
@@ -251,4 +219,34 @@ F 3 "~" H 4050 3275 50  0001 C CNN
 $EndComp
 Text Notes 4475 5850 0    50   ~ 0
 C1-C4 may be 100nF monolithic capacitors when\nused with MAX232A IC. When used with the common\ncheaper alternatives such as MAX232CPE, these need\nto be 1uF polarized electrolytic capacitors.
+Wire Wire Line
+	7725 3800 7650 3800
+Wire Wire Line
+	7650 3800 7650 4100
+Wire Wire Line
+	7650 4100 7725 4100
+Wire Wire Line
+	7650 3800 7650 3700
+Wire Wire Line
+	7650 3700 8300 3700
+Wire Wire Line
+	8300 3700 8300 3800
+Wire Wire Line
+	8300 3800 8225 3800
+Connection ~ 7650 3800
+Wire Wire Line
+	7575 4000 7725 4000
+Wire Wire Line
+	8225 3900 8300 3900
+Wire Wire Line
+	8300 3900 8300 4000
+Wire Wire Line
+	8300 4000 8225 4000
+NoConn ~ 8225 4100
+Wire Wire Line
+	7650 4275 7650 4200
+Wire Wire Line
+	7650 4200 7725 4200
+Text Notes 8450 4275 0    50   ~ 0
+Pin numbers have been oriented in such a way\nthat the pin numbers match those on the female\nDE-9 connector. That way a cable can be run to\nthe outside of the computer using a simple cable.\nNote that while the physical connector might be\nthe same as will in many cases be found on your\nMB, you need to ensure that the pinout actually\nmatches.
 $EndSCHEMATC

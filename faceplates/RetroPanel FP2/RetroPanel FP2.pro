@@ -1,4 +1,4 @@
-update=12.11.2022 22:03:56
+update=12.11.2022 23:22:51
 version=1
 last_client=kicad
 [general]
@@ -12,10 +12,20 @@ NetIExt=net
 version=1
 LibDir=
 [eeschema/libraries]
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=../../documentation/schematic/faceplates/
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=Pcbnew
+SpiceAjustPassiveValues=0
+LabSize=50
+ERC_TestSimilarLabels=1
 [pcbnew]
 version=1
 PageLayoutDescrFile=
-LastNetListRead=RetroPanel Module.net
+LastNetListRead=RetroPanel FP2.net
 CopperLayerCount=2
 BoardThickness=1.6
 AllowMicroVias=0
@@ -48,7 +58,7 @@ CopperTextItalic=0
 CopperTextUpright=1
 EdgeCutLineWidth=0.05
 CourtyardLineWidth=0.05
-OthersLineWidth=0.05
+OthersLineWidth=0.15
 OthersTextSizeV=1
 OthersTextSizeH=1
 OthersTextSizeThickness=0.15
@@ -57,7 +67,7 @@ OthersTextUpright=1
 SolderMaskClearance=0
 SolderMaskMinWidth=0
 SolderPasteClearance=0
-SolderPasteRatio=-0
+SolderPasteRatio=0
 [pcbnew/Layer.F.Cu]
 Name=F.Cu
 Type=0
@@ -247,13 +257,3 @@ uViaDrill=0.1
 dPairWidth=0.2
 dPairGap=0.25
 dPairViaGap=0.25
-[schematic_editor]
-version=1
-PageLayoutDescrFile=
-PlotDirectoryName=../documentation/schematic/
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=Pcbnew
-SpiceAjustPassiveValues=0
-LabSize=50
-ERC_TestSimilarLabels=1

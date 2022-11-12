@@ -71,12 +71,12 @@ Wire Wire Line
 $Comp
 L power:PWR_FLAG #FLG0101
 U 1 1 63693A74
-P 10775 800
-F 0 "#FLG0101" H 10775 875 50  0001 C CNN
-F 1 "PWR_FLAG" V 10775 927 50  0001 L CNN
-F 2 "" H 10775 800 50  0001 C CNN
-F 3 "~" H 10775 800 50  0001 C CNN
-	1    10775 800 
+P 10650 800
+F 0 "#FLG0101" H 10650 875 50  0001 C CNN
+F 1 "PWR_FLAG" V 10650 927 50  0001 L CNN
+F 2 "" H 10650 800 50  0001 C CNN
+F 3 "~" H 10650 800 50  0001 C CNN
+	1    10650 800 
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -169,8 +169,6 @@ Connection ~ 10600 1175
 Wire Wire Line
 	10600 1175 10725 1175
 Connection ~ 11100 800 
-Wire Wire Line
-	10775 800  10850 800 
 Connection ~ 10850 800 
 $Comp
 L mounting:Mounting_Pad M4
@@ -263,4 +261,22 @@ Wire Wire Line
 Wire Wire Line
 	9725 1175 9850 1175
 Connection ~ 9850 1175
+$Comp
+L mounting:Mounting_Pin M15
+U 1 1 63701E78
+P 10725 575
+F 0 "M15" H 10725 675 50  0001 C CNN
+F 1 "Mounting_Pin" H 10725 500 50  0001 C CNN
+F 2 "mounting:M3_pin_wide" H 10725 575 50  0001 C CNN
+F 3 "~" H 10725 575 50  0001 C CNN
+	1    10725 575 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10725 725  10725 800 
+Wire Wire Line
+	10725 800  10850 800 
+Wire Wire Line
+	10725 800  10650 800 
+Connection ~ 10725 800 
 $EndSCHEMATC
