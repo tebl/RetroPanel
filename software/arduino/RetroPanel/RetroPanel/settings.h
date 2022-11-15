@@ -1,4 +1,7 @@
 #pragma once
+#define BAUD_RATE_USB BAUD_RATE_115200
+#define BAUD_RATE_RS232 BAUD_RATE_9600
+
 #define DEFAULT_LED_PWR 64
 #define DEFAULT_ANSI false
 #define DEFAULT_TURBO true

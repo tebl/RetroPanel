@@ -3,6 +3,9 @@
 #include "settings.h"
 #include "commands.h"
 
+Serial_ serial_builtin = Serial;
+HardwareSerial *serial_active;
+
 /* Process a single received byte that was received over
  * the serial connection to the Arduino Nano, the byte
  * will be automatically echoed back to the terminal
@@ -18,8 +21,8 @@
 static char input_line[MAX_INPUT_SIZE];
 static unsigned int input_pos = 0;
 
-void process_serial(const byte byte_in) {
-  Serial.print((char) byte_in);
+void process_serial_byte(const byte byte_in) {
+  serial_active->print((char) byte_in);
   switch (byte_in) {
     /* Handle backspace character. Echoing will already have
     * moved the cursor back one position, but we'll need to
@@ -29,7 +32,7 @@ void process_serial(const byte byte_in) {
     case '\b':
       if (input_pos > 0) {
         input_pos--;
-        Serial.print(F(" \b"));
+        serial_active->print(F(" \b"));
       }
       break;
 
@@ -61,10 +64,19 @@ void process_serial(const byte byte_in) {
 
 void process_serial() {
   while(Serial.available() > 0) {
-    process_serial(Serial.read());
+    serial_active = (HardwareSerial*) &serial_builtin;
+    process_serial_byte(Serial.read());
+  }
+
+  while(Serial1.available() > 0) {
+    serial_active = &Serial1;
+    process_serial_byte(Serial1.read());
   }
 }
 
 void process_serial_init() {
-  Serial.begin(BAUD_RATE);
+  Serial.begin(BAUD_RATE_USB);
+  Serial1.begin(BAUD_RATE_RS232);
+
+  serial_active = (HardwareSerial*) &serial_builtin;
 }

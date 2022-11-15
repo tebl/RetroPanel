@@ -2,6 +2,8 @@
 #include "ansi.h"
 #include "constants.h"
 
+extern HardwareSerial *serial_active;
+
 /*
 * Calculates the length of a string that has been stored in Flash memory
 * instead of RAM, normally defined using the Arduino F() macro.
@@ -33,10 +35,10 @@ void help_command(const __FlashStringHelper *command = nullptr,
 
   if (parameter != nullptr) {
     size += flash_length(parameter) + 1;
-    Serial.print(' ');
+    serial_active->print(' ');
     ansi_colour(parameter, COLOUR_WHITE);
   }
-  for (int i = size; i < 20; i++) Serial.print(' ');
+  for (int i = size; i < 20; i++) serial_active->print(' ');
   position = 20;
 
   if (description != nullptr) {
@@ -46,11 +48,11 @@ void help_command(const __FlashStringHelper *command = nullptr,
 
   if (switch_ref != nullptr) {
     size = TERMINAL_COLS - flash_length(switch_ref);
-    for (int i = position; i < size; i++) Serial.print(' ');
+    for (int i = position; i < size; i++) serial_active->print(' ');
     ansi_colour(switch_ref, COLOUR_MAGENTA);
   }
 
-  Serial.println();
+  serial_active->println();
 }
 
 /*

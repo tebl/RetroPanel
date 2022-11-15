@@ -16,6 +16,7 @@ extern uint8_t display_type;
 extern char str_lo[4];
 extern char str_hi[4];
 extern char str_boot[4];
+extern HardwareSerial *serial_active;
 
 int storage_checksum() {
     int x = 0;
@@ -39,7 +40,7 @@ void clear_settings() {
 }
 
 void restore_settings() {
-    Serial.println(F("Restore settings ... "));
+    serial_active->println(F("Restore settings ... "));
     if (checksum_passes()) {
         for (int i = 0; i < STORAGE_BYTES; i++) {
             switch (i) {
@@ -107,7 +108,7 @@ void restore_settings() {
 }
 
 void store_settings() {
-    Serial.print(F("Storing settings ... "));
+    serial_active->print(F("Storing settings ... "));
     for (int i = 0; i < STORAGE_BYTES; i++) {
         switch (i) {
             case 0: EEPROM.update(i, ansi_enabled ? 1 : 0); break;
@@ -143,20 +144,20 @@ void store_settings() {
 }
 
 void dump_settings() {
-    Serial.print(F("Checksum... "));
+    serial_active->print(F("Checksum... "));
     if (checksum_passes()) {
         ansi_highlight_ln(F("OK"));
 
         for (int i = 0; i < STORAGE_BYTES; i++) {
-            if (i < 100) Serial.print(' ');
-            if (i < 10) Serial.print(' ');
-            Serial.print(i);
-            Serial.print(": ");
+            if (i < 100) serial_active->print(' ');
+            if (i < 10) serial_active->print(' ');
+            serial_active->print(i);
+            serial_active->print(": ");
 
             uint8_t value = EEPROM.read(i); 
-            if (value < 100) Serial.print(' ');
-            if (value < 10) Serial.print(' ');
-            Serial.println(value);
+            if (value < 100) serial_active->print(' ');
+            if (value < 10) serial_active->print(' ');
+            serial_active->println(value);
         }
     }
     else ansi_error_ln(F("ERROR"));

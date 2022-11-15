@@ -14,13 +14,14 @@ extern char str_lo[4];
 extern char str_hi[4];
 extern char str_boot[4];
 extern unsigned long last_activity;
+extern HardwareSerial *serial_active;
 
 /* Called when a recognized command has been recognized, but before the
 * function is actually called.
 */
 void echo_command(String command) {
   ansi_colour(COLOUR_CYAN);
-  Serial.println("> "+ command);
+  serial_active->println("> "+ command);
   ansi_default();
 }
 
@@ -29,44 +30,44 @@ void echo_command(String command) {
 */
 void echo_unknown(String command) {
   ansi_error();
-  Serial.println("? " + command);
+  serial_active->println("? " + command);
   ansi_default();
 }
 
 void do_support() {
-  Serial.println(F("For support, please visit:"));
-  Serial.println();
-  Serial.print(' ');
-  Serial.print(' ');
-  Serial.println(F(SUPPORT_URL));
+  serial_active->println(F("For support, please visit:"));
+  serial_active->println();
+  serial_active->print(' ');
+  serial_active->print(' ');
+  serial_active->println(F(SUPPORT_URL));
 }
 
 void print_display_str(char *c) {
   for (int i = 0; i < 4; i++) {
     switch (c[i]) {
     case 0:
-      Serial.print(' ');
+      serial_active->print(' ');
       break;
     
     default:
-      Serial.print(c[i]);
+      serial_active->print(c[i]);
       break;
     }
   }
 }
 
 void boot_status() {
-  Serial.print(F("Boot message "));
+  serial_active->print(F("Boot message "));
   if (boot_enabled) {
     ansi_weak_ln(F("ON"));
   } else {
     ansi_highlight_ln(F("OFF"));
   }
-  Serial.print(F("Value: \""));
+  serial_active->print(F("Value: \""));
   ansi_notice();
   print_display_str(str_boot);
   ansi_default();
-  Serial.println('\"');
+  serial_active->println('\"');
 }
 
 void boot_on() {
@@ -80,7 +81,7 @@ void boot_off() {
 }
 
 void display_status() {
-  Serial.print(F("Display type set to "));
+  serial_active->print(F("Display type set to "));
   if (display_type == DISPLAY_TYPE_CA) {
     ansi_notice_ln(F("CA"));
   } else {
@@ -99,24 +100,24 @@ void display_set_ck() {
 }
 
 void turbo_status() {
-  Serial.print(F("Turbo feature "));
+  serial_active->print(F("Turbo feature "));
   if (turbo_enabled) {
     ansi_weak_ln(F("ON"));
   } else {
     ansi_highlight_ln(F("OFF"));
   }
 
-  Serial.print(F("Value LO: \""));
+  serial_active->print(F("Value LO: \""));
   ansi_notice();
   print_display_str(str_lo);
   ansi_default();
-  Serial.println('\"');
+  serial_active->println('\"');
 
-  Serial.print(F("Value HI: \""));
+  serial_active->print(F("Value HI: \""));
   ansi_notice();
   print_display_str(str_hi);
   ansi_default();
-  Serial.println('\"');
+  serial_active->println('\"');
 }
 
 void turbo_on() {
@@ -150,9 +151,9 @@ void do_scratch_settings() {
 }
 
 void print_version() {
-  Serial.print(F(APP_TITLE));
-  Serial.print(' ');
-  Serial.println(F(APP_VERSION));
+  serial_active->print(F(APP_TITLE));
+  serial_active->print(' ');
+  serial_active->println(F(APP_VERSION));
 }
 
 void print_welcome() {
@@ -164,10 +165,10 @@ void print_welcome() {
 
 bool parser_error(String command, String error) {
   ansi_error();
-  Serial.print("? " + command);
-  Serial.print(" (");
-  Serial.print(error);
-  Serial.println(")");
+  serial_active->print("? " + command);
+  serial_active->print(" (");
+  serial_active->print(error);
+  serial_active->println(")");
   ansi_default();
 
   return false;

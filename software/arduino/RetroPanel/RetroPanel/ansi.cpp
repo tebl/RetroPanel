@@ -2,14 +2,15 @@
 #include "ansi.h"
 
 extern bool ansi_enabled;
+extern HardwareSerial *serial_active;
 
 /* 
 * Clear the screen and return cursor to top left position.
 */
 void ansi_clear() {
   if (ansi_enabled) {
-    Serial.print(F("\033[H"));
-    Serial.print(F("\033[2J"));
+    serial_active->print(F("\033[H"));
+    serial_active->print(F("\033[2J"));
   }
 }
 
@@ -22,22 +23,22 @@ void ansi_clear() {
 */
 void ansi_colour(int colour, bool bright) {
   if (ansi_enabled) {
-    Serial.print(F("\033["));
-    if (bright) Serial.print(F("1;"));
-    Serial.print(colour);
-    Serial.print("m");
+    serial_active->print(F("\033["));
+    if (bright) serial_active->print(F("1;"));
+    serial_active->print(colour);
+    serial_active->print("m");
   }
 }
 void ansi_colour(const __FlashStringHelper *string, int colour, bool bright, bool back_to_default, bool newline) {
   ansi_colour(colour, bright);
-  if (newline) Serial.println(string);
-  else Serial.print(string);
+  if (newline) serial_active->println(string);
+  else serial_active->print(string);
   if (back_to_default) ansi_default();
 }
 void ansi_colour(const char *string, int colour, bool bright, bool back_to_default, bool newline) {
   ansi_colour(colour, bright);
-  if (newline) Serial.println(string);
-  else Serial.print(string);
+  if (newline) serial_active->println(string);
+  else serial_active->print(string);
   if (back_to_default) ansi_default();
 }
 void ansi_colour_ln(const __FlashStringHelper *string, int colour, bool bright, bool back_to_default) { ansi_colour(string, colour, bright, back_to_default, true); }
@@ -56,14 +57,14 @@ void ansi_default() { ansi_colour(COLOUR_RESET); }
 */
 void ansi_decoration(int decoration) {
   if (!ansi_enabled) return;
-  Serial.print(F("\033["));
-  Serial.print(decoration);
-  Serial.print("m");
+  serial_active->print(F("\033["));
+  serial_active->print(decoration);
+  serial_active->print("m");
 }
 void ansi_decoration(const __FlashStringHelper *string, int decoration, bool back_to_default, bool newline) {
   ansi_decoration(decoration);
-  if (newline) Serial.println(string);
-  else Serial.print(string);
+  if (newline) serial_active->println(string);
+  else serial_active->print(string);
   if (back_to_default) ansi_default();
 }
 void ansi_decoration_ln(const __FlashStringHelper *string, int decoration, bool back_to_default) { ansi_decoration(string, decoration, true); }
@@ -74,8 +75,8 @@ void ansi_highlight() {
 }
 void ansi_highlight(const __FlashStringHelper *string, bool back_to_default, bool newline) {
   ansi_highlight();
-  if (newline) Serial.println(string);
-  else Serial.print(string);
+  if (newline) serial_active->println(string);
+  else serial_active->print(string);
   if (back_to_default) ansi_default();
 }
 void ansi_highlight_ln(const __FlashStringHelper *string, bool back_to_default) { ansi_highlight(string, back_to_default, true); }
@@ -106,15 +107,15 @@ void ansi_weak_ln(const char *string, bool back_to_default) { ansi_colour(string
 
 void ansi_status() {
   if (ansi_enabled) {
-    Serial.print(F("\033[1;31mA\033[1;32mN\033[1;33mS\033[1;34mI"));
+    serial_active->print(F("\033[1;31mA\033[1;32mN\033[1;33mS\033[1;34mI"));
     ansi_default();
-    Serial.print(F(" terminal codes "));
+    serial_active->print(F(" terminal codes "));
     ansi_highlight();
-    Serial.print(F("ON"));
+    serial_active->print(F("ON"));
     ansi_default();
-    Serial.println();
+    serial_active->println();
   } else {
-    Serial.println(F("ANSI terminal codes OFF"));
+    serial_active->println(F("ANSI terminal codes OFF"));
   }
 }
 
@@ -136,70 +137,70 @@ void ansi_test() {
   ansi_clear();
 
   ansi_highlight(F("HIGHLIGHT"));
-  Serial.print(" ");
+  serial_active->print(" ");
 
   ansi_debug(F("DEBUG"));
-  Serial.print(" ");
+  serial_active->print(" ");
 
   ansi_error(F("ERROR"));
-  Serial.print(" ");
+  serial_active->print(" ");
 
   ansi_notice(F("NOTICE"));
-  Serial.print(" ");
+  serial_active->print(" ");
 
   ansi_weak(F("WEAK"));
-  Serial.println();
+  serial_active->println();
 
   ansi_decoration(F("BOLD"), TEXT_DECORATION_BOLD);
-  Serial.print(" ");
+  serial_active->print(" ");
 
   ansi_decoration(F("DIM"), TEXT_DECORATION_DIM);
-  Serial.print(" ");
+  serial_active->print(" ");
 
   ansi_decoration(F("ITALIC"), TEXT_DECORATION_ITALIC);
-  Serial.print(" ");
+  serial_active->print(" ");
 
   ansi_decoration(F("UNDERLINE"), TEXT_DECORATION_UNDERLINE);
-  Serial.print(" ");
+  serial_active->print(" ");
 
   ansi_decoration(F("BLINK"), TEXT_DECORATION_BLINK);
-  Serial.print(" ");
+  serial_active->print(" ");
 
   ansi_decoration(F("REVERSED"), TEXT_DECORATION_REVERSED);
-  Serial.print(" ");
+  serial_active->print(" ");
 
   ansi_decoration(F("STRIKETHROUGH"), TEXT_DECORATION_STRIKETHROUGH);
-  Serial.println();
+  serial_active->println();
 
   for (int i = COLOUR_BLACK; i <= COLOUR_WHITE; i++) {
     ansi_colour(i);
-    Serial.print(i);
-    Serial.print(" ");
+    serial_active->print(i);
+    serial_active->print(" ");
   }
   ansi_default();
-  Serial.println();
+  serial_active->println();
 
   for (int i = COLOUR_BLACK; i < COLOUR_WHITE; i++) {
     ansi_colour(i, true);
-    Serial.print(i);
-    Serial.print(" ");
+    serial_active->print(i);
+    serial_active->print(" ");
   }
   ansi_default();
-  Serial.println();
+  serial_active->println();
 
   for (int i = COLOUR_BG_BLACK; i <= COLOUR_BG_WHITE; i++) {
     ansi_colour(i);
-    Serial.print(i);
-    Serial.print(" ");
+    serial_active->print(i);
+    serial_active->print(" ");
   }
   ansi_default();
-  Serial.println();
+  serial_active->println();
 
   for (int i = COLOUR_BG_BLACK; i < COLOUR_BG_WHITE; i++) {
     ansi_colour(i, true);
-    Serial.print(i);
-    Serial.print(" ");
+    serial_active->print(i);
+    serial_active->print(" ");
   }
   ansi_default();
-  Serial.println();
+  serial_active->println();
 }
