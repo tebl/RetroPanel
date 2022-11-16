@@ -12,6 +12,7 @@ extern bool turbo_enabled;
 extern bool boot_enabled;
 extern bool clock_enabled;
 extern bool clock_blinking;
+extern bool rs232_enabled;
 extern uint8_t display_type;
 extern char str_lo[4];
 extern char str_hi[4];
@@ -45,7 +46,7 @@ void do_support() {
   serial_active->println(F(SUPPORT_URL));
 }
 
-void do_clock_status() {
+void clock_status() {
   serial_active->print(F("Clock is "));
   if (clock_enabled) {
     ansi_weak_ln(F("ON"));
@@ -76,22 +77,22 @@ void do_clock_status() {
 void clock_on() {
   clock_enabled = true;
   clock_init();
-  do_clock_status();
+  clock_status();
 }
 
 void clock_off() {
   clock_enabled = false;
-  do_clock_status();
+  clock_status();
 }
 
 void clock_blink_on() {
   clock_blinking = true;
-  do_clock_status();
+  clock_status();
 }
 
 void clock_blink_off() {
   clock_blinking = false;
-  do_clock_status();
+  clock_status();
 }
 
 void print_display_str(char *c) {
@@ -130,6 +131,30 @@ void boot_on() {
 void boot_off() {
   boot_enabled = false;
   boot_status();
+}
+
+void rs232_status() {
+  serial_active->print(F("RS-232 "));
+  if (rs232_enabled) {
+    ansi_weak_ln(F("ON"));
+  } else {
+    ansi_highlight_ln(F("OFF"));
+  }
+  serial_active->print(F("Baud rate: \""));
+  ansi_notice();
+  serial_active->print(BAUD_RATE_RS232);
+  ansi_default();
+  serial_active->println('\"');
+}
+
+void rs232_on() {
+  rs232_enabled = true;
+  rs232_status();
+}
+
+void rs232_off() {
+  rs232_enabled = false;
+  rs232_status();
 }
 
 void display_status() {
@@ -290,7 +315,7 @@ bool handle_set_clock(String c) {
   clock_set_hour(((c[10] - '0') * 10) + (c[11] - '0'));
   clock_set_minutes(((c[12] - '0') * 10) + (c[13] - '0'));
 
-  do_clock_status();
+  clock_status();
   return true;
 }
 
@@ -327,7 +352,7 @@ void select_command_main(String command) {
   else if (handle_command(command, F("boot off"), boot_off));
   else if (command.startsWith(F("boot set"))) handle_set_boot(command);
   else if (handle_command(command, F("clear"), do_clear));
-  else if (handle_command(command, F("clock"), do_clock_status));
+  else if (handle_command(command, F("clock"), clock_status));
   else if (handle_command(command, F("clock on"), clock_on));
   else if (handle_command(command, F("clock off"), clock_off));
   else if (handle_command(command, F("clock blink on"), clock_blink_on));
@@ -339,6 +364,9 @@ void select_command_main(String command) {
   else if (handle_command(command, F("dump"), dump_settings));
   else if (handle_command(command, F("help"), print_help));
   else if (handle_command(command, F("reload"), restore_settings));
+  else if (handle_command(command, F("rs232"), rs232_status));
+  else if (handle_command(command, F("rs232 on"), rs232_on));
+  else if (handle_command(command, F("rs232 off"), rs232_off));
   else if (handle_command(command, F("scratch"), do_scratch_settings));
   else if (handle_command(command, F("support"), do_support));
   else if (handle_command(command, F("test boot"), set_boot));

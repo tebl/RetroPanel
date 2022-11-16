@@ -3,6 +3,8 @@
 #include "settings.h"
 #include "commands.h"
 
+extern bool rs232_enabled;
+
 Serial_ serial_builtin = Serial;
 HardwareSerial *serial_active;
 
@@ -68,9 +70,11 @@ void process_serial() {
     process_serial_byte(Serial.read());
   }
 
-  while(Serial1.available() > 0) {
-    serial_active = &Serial1;
-    process_serial_byte(Serial1.read());
+  if (rs232_enabled) {
+    while(Serial1.available() > 0) {
+      serial_active = &Serial1;
+      process_serial_byte(Serial1.read());
+    }
   }
 }
 

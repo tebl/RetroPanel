@@ -12,6 +12,7 @@ bool turbo_enabled = DEFAULT_TURBO;
 bool boot_enabled = DEFAULT_BOOT;
 bool clock_enabled = DEFAULT_CLOCK;
 bool clock_blinking = DEFAULT_CLOCK_FLASH;
+bool rs232_enabled = DEFAULT_RS232;
 uint8_t display_type = DEFAULT_DISPLAY_TYPE;
 
 unsigned long last_activity = 0;

@@ -75,6 +75,8 @@ void print_help() {
   help_command(F("display <ca|ck>"),      F("Configure display type"));
   help_command(F("dump"),                 F("Show raw contents of EEPROM"));  
   help_command(F("reload"),               F("Reload settings from EEPROM"));  
+  help_command(F("rs232"),                F("RS-232 status"));
+  help_command(F("rs232 <on|off>"),       F("Enable/disable RS-232"));
   help_command(F("save"),                 F("Save current settings to EEPROM"));
   help_command(F("set <abcd>"),           F("Set message on display"));
   help_command(F("scratch"),              F("Clear settings in EEPROM (reset afterwards)"));

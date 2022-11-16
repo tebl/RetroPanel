@@ -8,6 +8,7 @@
 #define DEFAULT_BOOT true
 #define DEFAULT_CLOCK false
 #define DEFAULT_CLOCK_FLASH true
+#define DEFAULT_RS232 false
 #define DEFAULT_DISPLAY_TYPE DISPLAY_TYPE_CK
 
 #define DEFAULT_LO_0 0
