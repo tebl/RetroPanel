@@ -51,14 +51,14 @@ void clock_status() {
   if (clock_enabled) {
     ansi_weak_ln(F("ON"));
   } else {
-    ansi_highlight_ln(F("OFF"));
+    ansi_error_ln(F("OFF"));
   }
 
   serial_active->print(F("Clock blinking is "));
   if (clock_blinking) {
     ansi_weak_ln(F("ON"));
   } else {
-    ansi_highlight_ln(F("OFF"));
+    ansi_error_ln(F("OFF"));
   }
 
   serial_active->print(F("Value: \""));
@@ -114,7 +114,7 @@ void boot_status() {
   if (boot_enabled) {
     ansi_weak_ln(F("ON"));
   } else {
-    ansi_highlight_ln(F("OFF"));
+    ansi_error_ln(F("OFF"));
   }
   serial_active->print(F("Value: \""));
   ansi_notice();
@@ -138,7 +138,7 @@ void rs232_status() {
   if (rs232_enabled) {
     ansi_weak_ln(F("ON"));
   } else {
-    ansi_highlight_ln(F("OFF"));
+    ansi_error_ln(F("OFF"));
   }
   serial_active->print(F("Baud rate: \""));
   ansi_notice();
@@ -160,9 +160,9 @@ void rs232_off() {
 void display_status() {
   serial_active->print(F("Display type set to "));
   if (display_type == DISPLAY_TYPE_CA) {
-    ansi_notice_ln(F("CA"));
+    ansi_weak_ln(F("CA"));
   } else {
-    ansi_notice_ln(F("CK"));
+    ansi_weak_ln(F("CK"));
   }
 }
 
@@ -181,7 +181,7 @@ void turbo_status() {
   if (turbo_enabled) {
     ansi_weak_ln(F("ON"));
   } else {
-    ansi_highlight_ln(F("OFF"));
+    ansi_error_ln(F("OFF"));
   }
 
   serial_active->print(F("Value LO: \""));
