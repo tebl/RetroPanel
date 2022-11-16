@@ -12,6 +12,8 @@
 extern bool ansi_enabled;
 extern bool turbo_enabled;
 extern bool boot_enabled;
+extern bool clock_enabled;
+extern bool clock_blinking;
 extern uint8_t display_type;
 extern char str_lo[4];
 extern char str_hi[4];
@@ -48,6 +50,8 @@ void restore_settings() {
                 case 1: turbo_enabled = EEPROM.read(i) == 1; break;
                 case 2: boot_enabled = EEPROM.read(i) == 1; break;
                 case 3: display_type = EEPROM.read(i); break;
+                case 4: clock_enabled = EEPROM.read(i) == 1; break;
+                case 5: clock_blinking = EEPROM.read(i) == 1; break;
 
                 // Boot message
                 case 19: str_boot[0] = EEPROM.read(i); break;
@@ -80,6 +84,8 @@ void restore_settings() {
                 case 1: turbo_enabled = DEFAULT_TURBO; break;
                 case 2: boot_enabled = DEFAULT_BOOT; break;
                 case 3: display_type = DEFAULT_DISPLAY_TYPE; break;
+                case 4: clock_enabled = DEFAULT_CLOCK; break;
+                case 5: clock_blinking = DEFAULT_CLOCK_FLASH; break;
 
                 // Boot message
                 case 19: str_boot[0] = DEFAULT_BOOT_0; break;
@@ -115,6 +121,8 @@ void store_settings() {
             case 1: EEPROM.update(i, turbo_enabled ? 1 : 0); break;
             case 2: EEPROM.update(i, boot_enabled ? 1 : 0); break;
             case 3: EEPROM.update(i, display_type); break;
+            case 4: EEPROM.update(i, clock_enabled ? 1 : 0); break;
+            case 5: EEPROM.update(i, clock_blinking ? 1 : 0); break;
 
             // Boot message
             case 19: EEPROM.update(i, str_boot[0]); break;

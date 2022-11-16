@@ -5,10 +5,13 @@
 #include "help.h"
 #include "storage.h"
 #include "hex_display.h"
+#include "clock.h"
 
 extern bool ansi_enabled;
 extern bool turbo_enabled;
 extern bool boot_enabled;
+extern bool clock_enabled;
+extern bool clock_blinking;
 extern uint8_t display_type;
 extern char str_lo[4];
 extern char str_hi[4];
@@ -40,6 +43,55 @@ void do_support() {
   serial_active->print(' ');
   serial_active->print(' ');
   serial_active->println(F(SUPPORT_URL));
+}
+
+void do_clock_status() {
+  serial_active->print(F("Clock is "));
+  if (clock_enabled) {
+    ansi_weak_ln(F("ON"));
+  } else {
+    ansi_highlight_ln(F("OFF"));
+  }
+
+  serial_active->print(F("Clock blinking is "));
+  if (clock_blinking) {
+    ansi_weak_ln(F("ON"));
+  } else {
+    ansi_highlight_ln(F("OFF"));
+  }
+
+  serial_active->print(F("Value: \""));
+  if (clock_is_running()) {
+    ansi_notice();
+    clock_print();
+    ansi_default();
+  } else {
+    ansi_error();
+    serial_active->print(F("RTC NOT running."));
+    ansi_default();   
+  }
+  serial_active->println('\"');
+}
+
+void clock_on() {
+  clock_enabled = true;
+  clock_init();
+  do_clock_status();
+}
+
+void clock_off() {
+  clock_enabled = false;
+  do_clock_status();
+}
+
+void clock_blink_on() {
+  clock_blinking = true;
+  do_clock_status();
+}
+
+void clock_blink_off() {
+  clock_blinking = false;
+  do_clock_status();
 }
 
 void print_display_str(char *c) {
@@ -221,6 +273,27 @@ bool handle_set_lo(String c) {
   return true;
 }
 
+bool in_range(uint8_t value, uint8_t low, uint8_t high) {
+  if (value < low || value > high) return false;
+  return true;
+}
+
+bool handle_set_clock(String c) {
+  if (!clock_is_running()) return parser_error(c, F("clock needs to be running"));
+  if (c.length() != 14 ||
+      !in_range(c[10] - '0', 0, 2) ||
+      !in_range(c[11] - '0', 0, 4) ||
+      !in_range(c[12] - '0', 0, 5) ||
+      !in_range(c[13] - '0', 0, 9)) return parser_error(c, F("clock must be specified as HHMM"));
+  echo_command(c);
+
+  clock_set_hour(((c[10] - '0') * 10) + (c[11] - '0'));
+  clock_set_minutes(((c[12] - '0') * 10) + (c[13] - '0'));
+
+  do_clock_status();
+  return true;
+}
+
 /* Clear the serial terminal screen, but note that this won't actually do
 * anything unless ANSI terminal codes are supported by the client and
 * have not been explicitly disabled. Does a second echo of the command
@@ -254,6 +327,12 @@ void select_command_main(String command) {
   else if (handle_command(command, F("boot off"), boot_off));
   else if (command.startsWith(F("boot set"))) handle_set_boot(command);
   else if (handle_command(command, F("clear"), do_clear));
+  else if (handle_command(command, F("clock"), do_clock_status));
+  else if (handle_command(command, F("clock on"), clock_on));
+  else if (handle_command(command, F("clock off"), clock_off));
+  else if (handle_command(command, F("clock blink on"), clock_blink_on));
+  else if (handle_command(command, F("clock blink off"), clock_blink_off));
+  else if (command.startsWith(F("clock set"))) handle_set_clock(command);
   else if (handle_command(command, F("display"), display_status));
   else if (handle_command(command, F("display ca"), display_set_ca));
   else if (handle_command(command, F("display ck"), display_set_ck));
