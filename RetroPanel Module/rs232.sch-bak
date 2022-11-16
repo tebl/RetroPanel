@@ -247,6 +247,6 @@ Wire Wire Line
 	7650 4275 7650 4200
 Wire Wire Line
 	7650 4200 7725 4200
-Text Notes 8425 4275 0    50   ~ 0
+Text Notes 8450 4275 0    50   ~ 0
 Pin numbers have been oriented in such a way\nthat the pin numbers match those on the female\nDE-9 connector. That way a cable can be run to\nthe outside of the computer using a simple cable.\nNote that while the physical connector might be\nthe same as will in many cases be found on your\nMB, you need to ensure that the pinout actually\nmatches.
 $EndSCHEMATC

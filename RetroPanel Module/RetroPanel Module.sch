@@ -486,11 +486,9 @@ F 3 "~" H 2875 2625 50  0001 C CNN
 	1    2875 2625
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6800 1850 6725 1850
-Text GLabel 6725 1850 0    50   Output ~ 0
+Text GLabel 6650 1850 0    50   Output ~ 0
 TTL_TX
-Text GLabel 6725 1950 0    50   Input ~ 0
+Text GLabel 6650 1950 0    50   Input ~ 0
 TTL_RX
 Wire Wire Line
 	6725 1950 6800 1950
@@ -533,12 +531,12 @@ NoConn ~ 875  1725
 $Comp
 L power:+5V #PWR0102
 U 1 1 6370FE93
-P 7275 1600
-F 0 "#PWR0102" H 7275 1450 50  0001 C CNN
-F 1 "+5V" H 7275 1740 50  0000 C CNN
-F 2 "" H 7275 1600 50  0000 C CNN
-F 3 "" H 7275 1600 50  0000 C CNN
-	1    7275 1600
+P 7275 1525
+F 0 "#PWR0102" H 7275 1375 50  0001 C CNN
+F 1 "+5V" H 7275 1665 50  0000 C CNN
+F 2 "" H 7275 1525 50  0000 C CNN
+F 3 "" H 7275 1525 50  0000 C CNN
+	1    7275 1525
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1473,6 +1471,37 @@ Wire Wire Line
 Connection ~ 10325 1225
 Wire Wire Line
 	10325 1225 10450 1225
+$Comp
+L Device:R_Small R23
+U 1 1 6376B23E
+P 6725 1625
+F 0 "R23" V 6875 1550 50  0000 L CNN
+F 1 "10k" V 6800 1550 50  0000 L CNN
+F 2 "resistor:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" H 6725 1625 50  0001 C CNN
+F 3 "~" H 6725 1625 50  0001 C CNN
+	1    6725 1625
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 1850 6800 1850
+Wire Wire Line
+	6725 1950 6650 1950
+Connection ~ 6725 1950
+$Comp
+L power:+5V #PWR0110
+U 1 1 637B1199
+P 6725 1525
+F 0 "#PWR0110" H 6725 1375 50  0001 C CNN
+F 1 "+5V" H 6725 1665 50  0000 C CNN
+F 2 "" H 6725 1525 50  0000 C CNN
+F 3 "" H 6725 1525 50  0000 C CNN
+	1    6725 1525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6725 1725 6725 1950
+Wire Wire Line
+	7275 1600 7275 1525
 Wire Bus Line
 	7950 4200 7950 4700
 Wire Bus Line
