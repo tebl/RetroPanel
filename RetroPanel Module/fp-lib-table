@@ -6,4 +6,5 @@
   (lib (name arduino_pro_micro)(type KiCad)(uri ${KIPRJMOD}/../common/modules/arduino_pro_micro.pretty)(options "")(descr ""))
   (lib (name resistor)(type KiCad)(uri ${KIPRJMOD}/../common/modules/resistor.pretty)(options "")(descr ""))
   (lib (name pwr_drv)(type KiCad)(uri ${KIPRJMOD}/../common/modules/pwr_drv.pretty)(options "")(descr ""))
+  (lib (name small_buzzer)(type KiCad)(uri ${KIPRJMOD}/../common/modules/small_buzzer.pretty)(options "")(descr ""))
 )

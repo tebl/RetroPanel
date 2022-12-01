@@ -1,4 +1,4 @@
-19093343259386829
+19098351332878172
 6pin_switch
 6pin tactile switch
 
@@ -76279,6 +76279,13 @@ CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor
 3
 2
 RetroPanel
+DS3231_ZS-042
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+RetroPanel
 F.Pad_pin
 module 1 pin (ou trou mecanique de percage)
 DEV
@@ -83236,6 +83243,13 @@ DEV
 0
 1
 1
+mounting
+M3_pin_wide
+module 1 pin (ou trou mecanique de percage)
+DEV
+0
+1
+1
 pwr_drv
 PWR_DRV
 simple 4-pin terminal block, pitch 5.08mm, revamped version of bornier4
@@ -83270,6 +83284,13 @@ Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/
 Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
 0
 2
+2
+small_buzzer
+Buzzer_12x9.5RM7.6
+Generic Buzzer, D12mm height 9.5mm with RM7.6mm
+buzzer
+0
+4
 2
 solder_bridge
 bridge
