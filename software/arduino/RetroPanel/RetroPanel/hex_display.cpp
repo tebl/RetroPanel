@@ -151,6 +151,7 @@ void hex_display_scan() {
       case ']': write_character(1,1,1,1,0,0,0); break; // ] / 32
       case '[': write_character(1,0,0,1,1,1,0); break; // [ / 33
       case '_': write_character(0,0,0,1,0,0,0); break; // _ / 34
+      case '*': write_character(1,1,0,0,0,1,1); break; // *
       default:
       case 0: write_character(0,0,0,0,0,0,0); break;
     }

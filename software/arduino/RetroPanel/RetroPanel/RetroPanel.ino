@@ -6,6 +6,7 @@
 #include "hex_display.h"
 #include "serial_console.h"
 #include "clock.h"
+#include "temperature.h"
 
 bool ansi_enabled = DEFAULT_ANSI;
 bool turbo_enabled = DEFAULT_TURBO;
@@ -13,6 +14,7 @@ bool boot_enabled = DEFAULT_BOOT;
 bool clock_enabled = DEFAULT_CLOCK;
 bool clock_blinking = DEFAULT_CLOCK_FLASH;
 bool rs232_enabled = DEFAULT_RS232;
+bool temperature_enabled = DEFAULT_TEMPERATURE;
 uint8_t display_type = DEFAULT_DISPLAY_TYPE;
 
 unsigned long last_activity = 0;
@@ -20,6 +22,7 @@ char str_lo[4] = {DEFAULT_LO_0, DEFAULT_LO_1, DEFAULT_LO_2, DEFAULT_LO_3};
 char str_hi[4] = {DEFAULT_HI_0, DEFAULT_HI_1, DEFAULT_HI_2, DEFAULT_HI_3};
 char str_boot[4] = {DEFAULT_BOOT_0, DEFAULT_BOOT_1, DEFAULT_BOOT_2, DEFAULT_BOOT_3};
 char str_clock[6] = {0,0,0,0,0,0};
+char str_temperature[4] = {0,0,'*','c'};
 
 void setup() {
   process_serial_init();
@@ -38,6 +41,10 @@ void setup() {
 
   if (clock_enabled) {
     clock_init();
+  }
+
+  if (temperature_enabled) {
+    temperature_init();
   }
 }
 
@@ -69,9 +76,19 @@ void process_clock() {
   }
 }
 
+void process_temperature() {
+  // Give other functions a chance to have something displayed
+  if (last_activity == 0 || ((millis() - last_activity) > ACTIVITY_THRESHOLD)) {
+    if (temperature_enabled) {
+      temperature_update();
+    }
+  }
+}
+
 void loop() {
   process_serial();
   process_turbo();
   process_clock();
+  process_temperature();
   hex_display_scan();
 }

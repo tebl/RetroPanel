@@ -6,6 +6,7 @@
 #include "storage.h"
 #include "hex_display.h"
 #include "clock.h"
+#include "temperature.h"
 
 extern bool ansi_enabled;
 extern bool turbo_enabled;
@@ -13,6 +14,7 @@ extern bool boot_enabled;
 extern bool clock_enabled;
 extern bool clock_blinking;
 extern bool rs232_enabled;
+extern bool temperature_enabled;
 extern uint8_t display_type;
 extern char str_lo[4];
 extern char str_hi[4];
@@ -46,19 +48,43 @@ void do_support() {
   serial_active->println(F(SUPPORT_URL));
 }
 
+void bmp_status() {
+  serial_active->print(F("BMP280 is "));
+  if (temperature_enabled) {
+    ansi_weak_ln((__FlashStringHelper*) STR_ON);
+
+    serial_active->print(F("Value: \""));
+    temperature_print();
+    serial_active->println('\"');
+  } else {
+    ansi_error_ln((__FlashStringHelper*) STR_OFF);
+  }
+}
+
+void bmp_on() {
+  temperature_enabled = true;
+  temperature_init();
+  bmp_status();
+}
+
+void bmp_off() {
+  temperature_enabled = false;
+  bmp_status();
+}
+
 void clock_status() {
   serial_active->print(F("Clock is "));
   if (clock_enabled) {
-    ansi_weak_ln(F("ON"));
+    ansi_weak_ln((__FlashStringHelper*) STR_ON);
   } else {
-    ansi_error_ln(F("OFF"));
+    ansi_error_ln((__FlashStringHelper*) STR_OFF);
   }
 
   serial_active->print(F("Clock blinking is "));
   if (clock_blinking) {
-    ansi_weak_ln(F("ON"));
+    ansi_weak_ln((__FlashStringHelper*) STR_ON);
   } else {
-    ansi_error_ln(F("OFF"));
+    ansi_error_ln((__FlashStringHelper*) STR_OFF);
   }
 
   serial_active->print(F("Value: \""));
@@ -112,9 +138,9 @@ void print_display_str(char *c) {
 void boot_status() {
   serial_active->print(F("Boot message "));
   if (boot_enabled) {
-    ansi_weak_ln(F("ON"));
+    ansi_weak_ln((__FlashStringHelper*) STR_ON);
   } else {
-    ansi_error_ln(F("OFF"));
+    ansi_error_ln((__FlashStringHelper*) STR_OFF);
   }
   serial_active->print(F("Value: \""));
   ansi_notice();
@@ -136,9 +162,9 @@ void boot_off() {
 void rs232_status() {
   serial_active->print(F("RS-232 "));
   if (rs232_enabled) {
-    ansi_weak_ln(F("ON"));
+    ansi_weak_ln((__FlashStringHelper*) STR_ON);
   } else {
-    ansi_error_ln(F("OFF"));
+    ansi_error_ln((__FlashStringHelper*) STR_OFF);
   }
   serial_active->print(F("Baud rate: \""));
   ansi_notice();
@@ -179,9 +205,9 @@ void display_set_ck() {
 void turbo_status() {
   serial_active->print(F("Turbo feature "));
   if (turbo_enabled) {
-    ansi_weak_ln(F("ON"));
+    ansi_weak_ln((__FlashStringHelper*) STR_ON);
   } else {
-    ansi_error_ln(F("OFF"));
+    ansi_error_ln((__FlashStringHelper*) STR_OFF);
   }
 
   serial_active->print(F("Value LO: \""));
@@ -240,7 +266,7 @@ void print_welcome() {
   ansi_default();
 }
 
-bool parser_error(String command, String error) {
+bool parser_error(String command, const __FlashStringHelper *error) {
   ansi_error();
   serial_active->print("? " + command);
   serial_active->print(" (");
@@ -252,7 +278,7 @@ bool parser_error(String command, String error) {
 }
 
 bool handle_set(String c) {
-  if (c.length() != 8) return parser_error(c, F("argument format"));
+  if (c.length() != 8) return parser_error(c, (__FlashStringHelper*) STR_ERROR_ARG);
   hex_display_write(0, c[4]);
   hex_display_write(1, c[5]);
   hex_display_write(2, c[6]);
@@ -263,7 +289,7 @@ bool handle_set(String c) {
 }
 
 bool handle_set_boot(String c) {
-  if (c.length() != 13) return parser_error(c, F("argument format"));
+  if (c.length() != 13) return parser_error(c, (__FlashStringHelper*) STR_ERROR_ARG);
   str_boot[0] = c[9];
   str_boot[1] = c[10];
   str_boot[2] = c[11];
@@ -275,7 +301,7 @@ bool handle_set_boot(String c) {
 }
 
 bool handle_set_hi(String c) {
-  if (c.length() != 17) return parser_error(c, F("argument format"));
+  if (c.length() != 17) return parser_error(c, (__FlashStringHelper*) STR_ERROR_ARG);
   str_hi[0] = c[13];
   str_hi[1] = c[14];
   str_hi[2] = c[15];
@@ -287,7 +313,7 @@ bool handle_set_hi(String c) {
 }
 
 bool handle_set_lo(String c) {
-  if (c.length() != 17) return parser_error(c, F("argument format"));
+  if (c.length() != 17) return parser_error(c, (__FlashStringHelper*) STR_ERROR_ARG);
   str_lo[0] = c[13];
   str_lo[1] = c[14];
   str_lo[2] = c[15];
@@ -319,16 +345,6 @@ bool handle_set_clock(String c) {
   return true;
 }
 
-/* Clear the serial terminal screen, but note that this won't actually do
-* anything unless ANSI terminal codes are supported by the client and
-* have not been explicitly disabled. Does a second echo of the command
-* as the first one will disappear upon execution.
-*/
-void do_clear() {
-  ansi_clear();
-  if (ansi_enabled) echo_command(F("clear"));
-}
-
 /*
 * Handle serial commands, mainly just matches the name and if it does the
 * supplied function is run. Recognized commands are echoed back to the user.
@@ -347,11 +363,13 @@ void select_command_main(String command) {
   else if (handle_command(command, F("ansi on"), ansi_on));
   else if (handle_command(command, F("ansi off"), ansi_off));
   else if (handle_command(command, F("ansi test"), ansi_test));
+  else if (handle_command(command, F("bmp"), bmp_status));
+  else if (handle_command(command, F("bmp on"), bmp_on));
+  else if (handle_command(command, F("bmp off"), bmp_off));
   else if (handle_command(command, F("boot"), boot_status));
   else if (handle_command(command, F("boot on"), boot_on));
   else if (handle_command(command, F("boot off"), boot_off));
   else if (command.startsWith(F("boot set"))) handle_set_boot(command);
-  else if (handle_command(command, F("clear"), do_clear));
   else if (handle_command(command, F("clock"), clock_status));
   else if (handle_command(command, F("clock on"), clock_on));
   else if (handle_command(command, F("clock off"), clock_off));

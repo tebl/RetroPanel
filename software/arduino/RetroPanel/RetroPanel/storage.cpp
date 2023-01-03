@@ -16,6 +16,7 @@ extern bool clock_enabled;
 extern bool clock_blinking;
 extern uint8_t display_type;
 extern bool rs232_enabled;
+extern bool temperature_enabled;
 extern char str_lo[4];
 extern char str_hi[4];
 extern char str_boot[4];
@@ -54,6 +55,7 @@ void restore_settings() {
                 case 4: clock_enabled = EEPROM.read(i) == 1; break;
                 case 5: clock_blinking = EEPROM.read(i) == 1; break;
                 case 6: rs232_enabled = EEPROM.read(i) == 1; break;
+                case 7: temperature_enabled = EEPROM.read(i) == 1; break;
 
                 // Boot message
                 case 19: str_boot[0] = EEPROM.read(i); break;
@@ -89,6 +91,7 @@ void restore_settings() {
                 case 4: clock_enabled = DEFAULT_CLOCK; break;
                 case 5: clock_blinking = DEFAULT_CLOCK_FLASH; break;
                 case 6: rs232_enabled = DEFAULT_RS232; break;
+                case 7: temperature_enabled = DEFAULT_TEMPERATURE; break;
 
                 // Boot message
                 case 19: str_boot[0] = DEFAULT_BOOT_0; break;
@@ -127,6 +130,7 @@ void store_settings() {
             case 4: EEPROM.update(i, clock_enabled ? 1 : 0); break;
             case 5: EEPROM.update(i, clock_blinking ? 1 : 0); break;
             case 6: EEPROM.update(i, rs232_enabled ? 1 : 0); break;
+            case 7: EEPROM.update(i, temperature_enabled ? 1 : 0); break;
 
             // Boot message
             case 19: EEPROM.update(i, str_boot[0]); break;

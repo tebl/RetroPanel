@@ -30,4 +30,8 @@
 #define DISPLAY_TYPE_CK 0
 #define DISPLAY_TYPE_CA 1
 
+const char STR_VALUE[] PROGMEM = "Value";
 const char STR_DONE[] PROGMEM  = "done!";
+const char STR_ON[] PROGMEM = "ON";
+const char STR_OFF[] PROGMEM = "OFF";
+const char STR_ERROR_ARG[] PROGMEM = "argument format";

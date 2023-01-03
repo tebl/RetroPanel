@@ -66,7 +66,8 @@ void print_help() {
   help_command(F("boot"),                 F("Boot message status"));
   help_command(F("boot <on|off>"),        F("Enable/disable boot message"));
   help_command(F("boot set <abcd>"),      F("Set boot message"));
-  help_command(F("clear"),                F("Clear screen"));
+  help_command(F("bmp"),                  F("BMP280 status"));
+  help_command(F("bmp <on|off>"),         F("Enable/disable BMP280"));
   help_command(F("clock"),                F("Show DS3231 clock status"));
   help_command(F("clock <on|off>"),       F("Enable/disable clock display"));
   help_command(F("clock blink <on|off>"), F("Enable/disable blinking clock"));
