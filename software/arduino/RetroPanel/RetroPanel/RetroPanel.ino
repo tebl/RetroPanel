@@ -22,7 +22,7 @@ char str_lo[4] = {DEFAULT_LO_0, DEFAULT_LO_1, DEFAULT_LO_2, DEFAULT_LO_3};
 char str_hi[4] = {DEFAULT_HI_0, DEFAULT_HI_1, DEFAULT_HI_2, DEFAULT_HI_3};
 char str_boot[4] = {DEFAULT_BOOT_0, DEFAULT_BOOT_1, DEFAULT_BOOT_2, DEFAULT_BOOT_3};
 char str_clock[6] = {0,0,0,0,0,0};
-char str_temperature[4] = {0,0,'*','c'};
+char str_temperature[4] = {DEFAULT_TEMP_0, DEFAULT_TEMP_1, DEFAULT_TEMP_2, DEFAULT_TEMP_3};
 
 void setup() {
   process_serial_init();

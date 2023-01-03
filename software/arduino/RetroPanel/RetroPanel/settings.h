@@ -24,6 +24,10 @@
 #define DEFAULT_BOOT_1 'o'
 #define DEFAULT_BOOT_2 'o'
 #define DEFAULT_BOOT_3 't'
+#define DEFAULT_TEMP_0 0
+#define DEFAULT_TEMP_1 0
+#define DEFAULT_TEMP_2 '*'
+#define DEFAULT_TEMP_3 'c'
 
 #define ACTIVITY_THRESHOLD 10000
 #define DISPLAY_THRESHOLD 0
