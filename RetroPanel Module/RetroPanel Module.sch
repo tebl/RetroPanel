@@ -652,12 +652,12 @@ IIC_SCL
 $Comp
 L power:GND #PWR03
 U 1 1 637DE186
-P 1425 4150
-F 0 "#PWR03" H 1425 3900 50  0001 C CNN
-F 1 "GND" H 1430 3977 50  0000 C CNN
-F 2 "" H 1425 4150 50  0001 C CNN
-F 3 "" H 1425 4150 50  0001 C CNN
-	1    1425 4150
+P 1425 5375
+F 0 "#PWR03" H 1425 5125 50  0001 C CNN
+F 1 "GND" H 1430 5202 50  0000 C CNN
+F 2 "" H 1425 5375 50  0001 C CNN
+F 3 "" H 1425 5375 50  0001 C CNN
+	1    1425 5375
 	1    0    0    -1  
 $EndComp
 Text GLabel 1425 3100 2    50   BiDi ~ 0
@@ -1515,14 +1515,12 @@ Wire Wire Line
 	1000 4075 1425 4075
 Connection ~ 1425 4075
 Wire Wire Line
-	1425 4075 1425 4150
-Wire Wire Line
 	1075 3975 1000 3975
 Wire Wire Line
 	1000 3875 1275 3875
 Wire Wire Line
 	1350 3775 1000 3775
-Text Notes 675  4700 0    50   ~ 0
+Text Notes 1475 3700 0    50   ~ 0
 IIC_RTC pinout matches\nDS3231-module marked\n"ZS-042" with battery\nfacing up.
 Wire Wire Line
 	1075 3000 1075 3975
@@ -1533,6 +1531,38 @@ Wire Wire Line
 	1350 3200 1350 3775
 Wire Wire Line
 	1425 3300 1425 4075
+$Comp
+L Connector_Generic:Conn_01x04 A3
+U 1 1 63941B37
+P 800 5100
+F 0 "A3" H 800 5400 50  0000 C CNN
+F 1 "IIC_BMP" H 800 5325 50  0000 C CNN
+F 2 "RetroPanel:BMP280-5V" H 800 5100 50  0001 C CNN
+F 3 "~" H 800 5100 50  0001 C CNN
+	1    800  5100
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1425 4075 1425 5200
+Wire Wire Line
+	1000 5200 1425 5200
+Connection ~ 1425 5200
+Wire Wire Line
+	1425 5200 1425 5375
+Wire Wire Line
+	1075 3975 1075 5300
+Wire Wire Line
+	1075 5300 1000 5300
+Connection ~ 1075 3975
+Wire Wire Line
+	1000 5100 1350 5100
+Wire Wire Line
+	1350 5100 1350 3775
+Connection ~ 1350 3775
+Wire Wire Line
+	1275 3875 1275 5000
+Wire Wire Line
+	1275 5000 1000 5000
 Wire Bus Line
 	7950 4200 7950 4700
 Wire Bus Line
@@ -1543,4 +1573,7 @@ Wire Bus Line
 	6650 4200 6650 5000
 Wire Bus Line
 	9375 2650 9375 3850
+Connection ~ 1275 3875
+Text Notes 625  5900 0    50   ~ 0
+IIC_BMP pinout matches\nBMP280 5V module with\nhole facing to the right.
 $EndSCHEMATC

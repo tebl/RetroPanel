@@ -1,4 +1,4 @@
-19098351332878172
+19077276038554153
 6pin_switch
 6pin tactile switch
 
@@ -76272,6 +76272,13 @@ DEV
 1
 1
 RetroPanel
+BMP280-5V
+Through hole straight pin header, 1x04, 2.54mm pitch, single row
+Through hole pin header THT 1x04 2.54mm single row
+0
+4
+4
+RetroPanel
 CP_Radial_D4.0mm_P2.00mm_Custom
 CP, Radial series, Radial, pin pitch=2.00mm, , diameter=4mm, Electrolytic Capacitor
 CP Radial series Radial pin pitch 2.00mm  diameter 4mm Electrolytic Capacitor
@@ -83194,20 +83201,6 @@ varistor SIOV
 0
 2
 2
-arduino_pro_micro
-Arduino_Pro_Micro
-
-
-0
-36
-24
-arduino_pro_micro
-Arduino_Pro_Micro_Reverse
-
-
-0
-36
-24
 mounting
 M2
 module 1 pin (ou trou mecanique de percage)
@@ -83250,87 +83243,3 @@ DEV
 0
 1
 1
-pwr_drv
-PWR_DRV
-simple 4-pin terminal block, pitch 5.08mm, revamped version of bornier4
-terminal block bornier4
-0
-4
-4
-pwr_drv
-PWR_EXT
-simple 4-pin terminal block, pitch 5.08mm, revamped version of bornier4
-terminal block bornier4
-0
-3
-3
-pwr_drv
-PWR_IN
-simple 4-pin terminal block, pitch 5.08mm, revamped version of bornier4
-terminal block bornier4
-0
-4
-4
-resistor
-R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
-Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=7.62mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
-Resistor Axial_DIN0207 series Axial Horizontal pin pitch 7.62mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
-0
-2
-2
-resistor
-R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal
-Resistor, Axial_DIN0207 series, Axial, Horizontal, pin pitch=10.16mm, 0.25W = 1/4W, length*diameter=6.3*2.5mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
-Resistor Axial_DIN0207 series Axial Horizontal pin pitch 10.16mm 0.25W = 1/4W length 6.3mm diameter 2.5mm
-0
-2
-2
-small_buzzer
-Buzzer_12x9.5RM7.6
-Generic Buzzer, D12mm height 9.5mm with RM7.6mm
-buzzer
-0
-4
-2
-solder_bridge
-bridge
-Through hole straight pin header, 1x02, 1.00mm pitch, single row
-Through hole pin header THT 1x02 1.00mm single row
-0
-2
-2
-solder_bridge
-bridge2
-Through hole straight pin header, 1x02, 1.00mm pitch, single row
-Through hole pin header THT 1x02 1.00mm single row
-0
-2
-2
-solder_bridge
-bridge_open
-Through hole straight pin header, 1x02, 1.00mm pitch, single row
-Through hole pin header THT 1x02 1.00mm single row
-0
-2
-2
-solder_bridge
-bridge_r
-Through hole straight pin header, 1x02, 1.00mm pitch, single row
-Through hole pin header THT 1x02 1.00mm single row
-0
-2
-2
-solder_bridge
-select
-Through hole straight pin header, 1x02, 1.00mm pitch, single row
-Through hole pin header THT 1x02 1.00mm single row
-0
-3
-3
-solder_bridge
-select2
-Through hole straight pin header, 1x02, 1.00mm pitch, single row
-Through hole pin header THT 1x02 1.00mm single row
-0
-3
-3
