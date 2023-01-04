@@ -13,7 +13,7 @@ void temperature_init() {
   if (temperature_initialized) return;
 
   bmp280.begin(BMP280_I2C_ALT_ADDR);
-  bmp280.setTimeStandby(TIME_STANDBY_2000MS);
+  bmp280.setTimeStandby(TIME_STANDBY_1000MS);
   bmp280.startNormalConversion();
 
   temperature_initialized = true;
