@@ -4,12 +4,12 @@
 
 #define DEFAULT_LED_PWR 64
 #define DEFAULT_ANSI false
-#define DEFAULT_TURBO true
+#define DEFAULT_TURBO false
 #define DEFAULT_BOOT true
 #define DEFAULT_CLOCK false
 #define DEFAULT_CLOCK_FLASH true
 #define DEFAULT_TEMPERATURE false
-#define DEFAULT_RS232 false
+#define DEFAULT_RS232 true
 #define DEFAULT_DISPLAY_TYPE DISPLAY_TYPE_CK
 
 #define DEFAULT_LO_0 0
