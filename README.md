@@ -5,7 +5,7 @@ Having found a motherboard I really wanted to use, I found that obtaining an AT-
 
 So I made one.
 
-![In action](https://github.com/tebl/RetroPanel/raw/main/gallery/2023-01-13%2018.41.06)
+![In action](https://github.com/tebl/RetroPanel/raw/main/gallery/2023-01-13%2018.41.06.jpg)
 
 The computer isn't what I had intended to build, but I am happy with it. There are better MBs, there are faster CPU options available and the graphics card will excite no other retro enthusiast other the one I grew into - however, it is exactly the *"right"* kind of slow for the games I remember. The *RetroPanel* was the missing piece to make all of that work, and with the wonders of *open-source* you should now have everything you need to build one as well.
 
@@ -25,15 +25,15 @@ While there may only be one version of the RetroPanel for quite some time, but k
 ## 1.1> RetroPanel
 ![RetroPanel](https://github.com/tebl/RetroPanel/raw/main/gallery/2022-11-16%2023.27.25.jpg)
 
-The standard version of the RetroPanel, envisioned to provide most features found on cases from even the earlies of computer generations - that includes a working power switch, a turbo-switch and one of those awesome looking Mhz-displays. With optional modules for adding a clock as well as a temperature-sensor.
+The standard version of the RetroPanel, envisioned to provide most features found on cases from even the earlies of computer generations - that includes a working power switch, a turbo-switch and one of those awesome looking Mhz-displays. With options for installing modules for adding a clock (RTC) to it as well as a temperature-sensor (BMP280).
 
 The standard version is composed of the following set of PCBs, in the cases of alternative faceplates you would only need the one that is suitable for your needs. Follow the documentation links for specific information related to each of them, note that the documentation on building one of these units this is covered through the documentation for the main PCB ([RetroPanel Module](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module)).
 
 | PCB                 | # Required    | Description                        | Documentation                      | Order      |
 | ---------------------- | ----------- | ---------------------------------- | ---------------------------------- | ---------- |
-| [RetroPanel Module](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Module) | 1 | Main module | [Documentation](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Module/README.md), [BOM](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Module/README.md#3-bom) | PCBWay
-| [RetroPanel Front](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Front) | 1 | Front-facing board holding components | [Documentation](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Front/README.md), [BOM](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Front/README.md#3-bom) | PCBWay
-| [RetroPanel Side](https://github.com/tebl/BulkyMIDI-32/tree/main/BulkyMIDI-32%20Side) | 2 | Design for the sides, you need two of these. | [Documentation](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Side/README.md) | PCBWay
+| [RetroPanel Module](https://github.com/tebl/RetroPanel/tree/main/RetroPanel%20Module) | 1 | Main module | [Documentation](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Module/README.md), [BOM](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Module/README.md#3-bom) | PCBWay
+| [RetroPanel Front](https://github.com/tebl/RetroPanel/tree/main/RetroPanel%20Front) | 1 | Front-facing board holding components | [Documentation](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Front/README.md), [BOM](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Front/README.md#3-bom) | PCBWay
+| [RetroPanel Side](https://github.com/tebl/RetroPanel/tree/main/RetroPanel%20Side) | 2 | Design for the sides, you need two of these. | [Documentation](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Side/README.md) | PCBWay
 | [RetroPanel Faceplate (FP1)](https://github.com/tebl/RetroPanel/tree/main/faceplates/RetroPanel%20FP1) | 1 | Faceplate that goes on the very front of the module, this has provisions for all switches and LEDs | [Documentation](https://github.com/tebl/RetroPanel/tree/main/faceplates/RetroPanel%20FP1) | PCBWay
 
 # 2> Background
