@@ -15,12 +15,14 @@ The computer isn't what I had intended to build, but I am happy with it. There a
 - [3> Resources](#3-resources)
 - [4> Acknowledgements](#4-acknowledgements)
 
+
 # 1> Versions
 While there may only be one version of the RetroPanel for quite some time, but knowing myself and the fact that it has become a form factor that I really like - in time there will be more than one version of the RetroPanel. The differences will more than likely be in core functionality, not in terms of different faceplates that should already be catered for in the standard version.
 
 | Module                            | Description                                      |
 | --------------------------------- | ------------------------------------------------ | 
 | [RetroPanel](#11-retropanel)      | Standard version
+
 
 ## 1.1> RetroPanel
 ![RetroPanel](https://github.com/tebl/RetroPanel/raw/main/gallery/2022-11-16%2023.27.25.jpg)
@@ -41,7 +43,7 @@ Recently I had the glorious idea of rebuilding the first PC I bought, it was a l
 
 ![Old motherboard](https://github.com/tebl/RetroPanel/raw/main/gallery/2022-11-18%2000.56.13.jpg)
 
-Why does that matter? It doesn't, but the next thing does: I couldn't find an AT-case that wasn't either horribly mangled, situated around a collectors more beloved hardware or any combination of the two. Well, that's not completely true - I found and bought a case, but it was thrown from every moving postal vehicle from Poland up to where I live - bringing us back to the first point on my little list.
+Why does that matter? It doesn't, but the next thing does: I couldn't find an AT-case that wasn't either horribly mangled, situated around a collectors more beloved hardware or any combination of the two. Well, that's not completely true - I found and bought a case, but it was thrown from every moving postal truck from Poland all the way up to where I live - bringing us back to the first point on my little list.
 
 ![RetroPanel in new case](https://github.com/tebl/RetroPanel/raw/main/gallery/2023-01-13%2018.41.06.jpg)
 
