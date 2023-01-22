@@ -2,12 +2,13 @@
 Having found a motherboard I really wanted to use, I found that obtaining an AT-case wasn't quite as easy as I had expected - at least none that met my demands for condition, price and availability anywhere near me. That's the short of it, see [Background](#2-background) for the full story. Anyway, my solution to my predicament was to simply use a slightly more modern ATX-case, but I wanted it to have all of the features available to even the earlies of computer generations available to me - that includes a working power switch, a turbo-switch and one of those awesome looking Mhz-displays. Add a clock and a temperature-sensor and it soon becomes apparent: such a thing, only had the potential to exist in my head.
 
 ![RetroPanel](https://github.com/tebl/RetroPanel/raw/main/gallery/2022-11-16%2023.27.25.jpg)
+[![YouTube image](https://github.com/tebl/RetroPanel/raw/main/gallery/youtube_clip_introduction.jpg)](https://youtu.be/AMw6y9zLjqE)
 
 So I made one.
 
 ![In action](https://github.com/tebl/RetroPanel/raw/main/gallery/2023-01-13%2018.41.06.jpg)
 
-The computer isn't what I had intended to build, but I am happy with it. There are better MBs, there are faster CPU options available and the graphics card will excite no other retro enthusiast other the one I grew into - however, it is exactly the *"right"* kind of slow for the games I remember. The *RetroPanel* was the missing piece to make all of that work, and with the wonders of *open-source* you should now have everything you need to build one as well.
+The resulting computer isn't what I had originally intended to build, but I am quite happy with the results. There are better MBs, there are faster CPU options available and the graphics card will excite no other retro enthusiast other the one I grew into - however, it is exactly the *"right"* kind of slow for the games I remember. The *RetroPanel* was the missing piece to make all of that work, and with the wonders of *open-source* you should now have everything you need to build one as well.
 
 - [1> Versions](#1-versions)
   - [1.1> RetroPanel](#11-retropanel)
