@@ -4,14 +4,14 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "RetroPanel (Faceplate FP1)"
+Title "RetroPanel (Faceplate FP2)"
 Date ""
 Rev "A"
 Comp ""
 Comment1 ""
 Comment2 ""
 Comment3 ""
-Comment4 "A faceplate suitable for early AT Pentium MBs."
+Comment4 "Only features cutouts for the features used by POST card, 7-segment display (CA) and tool button."
 $EndDescr
 $Comp
 L mounting:Mounting_Pin M1

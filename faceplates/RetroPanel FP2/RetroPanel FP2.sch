@@ -10,8 +10,8 @@ Rev "A"
 Comp ""
 Comment1 ""
 Comment2 ""
-Comment3 ""
-Comment4 "A faceplate suitable for early AT Pentium MBs."
+Comment3 "7-segment display (CA) and tool button."
+Comment4 "Only features cutouts for the features used by POST card,"
 $EndDescr
 $Comp
 L mounting:Mounting_Pin M1
