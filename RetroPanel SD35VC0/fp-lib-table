@@ -1,0 +1,11 @@
+(fp_lib_table
+  (lib (name mounting)(type KiCad)(uri ${KIPRJMOD}/../common/modules/mounting.pretty)(options "")(descr ""))
+  (lib (name RetroPanel)(type KiCad)(uri ${KIPRJMOD}/../common/modules/RetroPanel.pretty)(options "")(descr ""))
+  (lib (name 6pin_switch)(type KiCad)(uri ${KIPRJMOD}/../common/modules/6pin_switch.pretty)(options "")(descr ""))
+  (lib (name solder_bridge)(type KiCad)(uri ${KIPRJMOD}/../common/modules/solder_bridge.pretty)(options "")(descr ""))
+  (lib (name arduino_pro_micro)(type KiCad)(uri ${KIPRJMOD}/../common/modules/arduino_pro_micro.pretty)(options "")(descr ""))
+  (lib (name resistor)(type KiCad)(uri ${KIPRJMOD}/../common/modules/resistor.pretty)(options "")(descr ""))
+  (lib (name pwr_drv)(type KiCad)(uri ${KIPRJMOD}/../common/modules/pwr_drv.pretty)(options "")(descr ""))
+  (lib (name small_buzzer)(type KiCad)(uri ${KIPRJMOD}/../common/modules/small_buzzer.pretty)(options "")(descr ""))
+  (lib (name SD35VC0)(type KiCad)(uri ${KIPRJMOD}/../common/modules/SD35VC0.pretty)(options "")(descr ""))
+)
