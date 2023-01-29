@@ -23,4 +23,10 @@ K connector
 F ~
 $ENDCMP
 #
+$CMP SD35VC0_Front_Panel
+D Generic connector, single row, 01x21, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
 #End Doc Library
