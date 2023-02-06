@@ -1,5 +1,5 @@
 # RetroPanel Module
-The standard version of the RetroPanel consists of several separate PCB designs, five in total with two of these being the duplicated side panels. The piece of documentation you're currently looking at covers the main module as well as the overall build details, but take note that many of the other boards such as the [RetroPanel Front](https://github.com/tebl/RetroPanel/tree/main/RetroPanel%20Front) also comes with their own set of documenentation - so make sure that you browse around to get the full picture (especially when it comes to ordering parts). If you don't have any idea what all this is about, have a read through the [main documentation](https://github.com/tebl/RetroPanel) first.
+The standard version of the RetroPanel consists of several separate PCB designs, five in total with two of these being the duplicated side panels. The piece of documentation you're currently looking at covers the main module as well as the overall build details, but take note that many of the other boards such as the [RetroPanel Front](https://github.com/tebl/RetroPanel/tree/main/RetroPanel%20Front) also comes with its own set of documenentation - so make sure that you browse around to get the full picture (especially when ordering parts). If you don't have any idea what all this is about, have a read through the [main documentation](https://github.com/tebl/RetroPanel) first.
 
 ![Completed unit](https://github.com/tebl/RetroPanel/raw/main/gallery/2022-11-16%2023.27.25.jpg)
 ![Installed in a system](https://github.com/tebl/RetroPanel/raw/main/gallery/2023-01-13%2021.00.31.jpg)
@@ -33,7 +33,11 @@ Now that you know what you want to build, we can get started on the most expensi
 **NB!** While I would have liked to give you specific part numbers for "reputable" electronic part suppliers, I can't afford to shop there so I usually make due with what can be found on sites such as ebay, AliExpress and other sites that sell *cheap* chinese components. The downside to this is that I can't link to a part directly and expect it to stay listed, so you'll need to consider the description listed as mere *suggested search terms*.
 
 ## 1.1> Soldering it together
-The construction of this unit should be fairly straight-forward, just take your time in order to make sure everything goes into place - more or less straight. I usually recommend starting by having a good look at the PCBs, try to figure out where all of the listed components go and in which orientation they go in (all of this should be clearly marked on the silkscreen). While I would have liked to take every precaution and cover every possible combination of features, but for the purposes of this document I will assume that you're going to install every feature on the board. 
+The construction of this unit should be fairly straight-forward, just take your time in order to make sure everything goes into place - more or less straight. I usually recommend starting by having a good look at the PCBs, try to figure out where all of the listed components go and in which orientation they go in (all of this should be clearly marked on the silkscreen).
+
+While I would have liked to take every precaution and cover every possible combination of features, but for the purpose of keeping this document somewhat coherent - from this point on I'll mostly just assume that you're going to install every feature available. If you prefer something a little more visual, I've also taken the time to create a video in order to cover most of this - just click the image below.
+
+[![YouTube image](https://github.com/tebl/RetroPanel/raw/main/gallery/youtube_clip_assembling.jpg)](https://youtu.be/NcJ1v0hauTQ)
 
 If you only want parts of it, follow along on the schematic so that you know where each part are used. If you only wanted to use this as an external display for a diagnostic card, you'll generally only install the *J9*-connector for it and almost no other component. It can easily be combined with the smart switch, if you need that - it is separate from all of the Arduino-related circuitry.
 
@@ -67,7 +71,9 @@ I usually tend to solder female pin-headers to modules that I want to remove lat
 While we're already dealing with pin-headers, just go ahead and all of those that we intend to a signal from the computers motherboard at some point. That should be all of those remaining, primarily the column directly under the *Arduino Pro Micro*. Personally I tend to use different coloured pin headers for those that will connect up to a LED compared to those going to switches, mostly so that I don't have to think so hard about what's going where. They'll never go in straight the first time, so just solder in the first pin - that way you can adjust them before soldering it all the way. You will burn your fingers doing at least one of them, that's the natural law of soldering short pin-header segments. 
 
 ## 1.2> Adding the front
-Soldering together the front panel will be covered as part of its [documentation](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Front/README.md#11-soldering-it-together), including a separate [BOM](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Front/README.md#3-bom). Remembering that we earlier set some jumpers according to the display that was used, also - we remembered to use a latching power switch if we had decided against installing the smart switch circuit (momentary switch when it is used).
+Soldering together the front panel will be covered as part of its [documentation](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Front/README.md#11-soldering-it-together), including a separate [BOM](https://github.com/tebl/RetroPanel/blob/main/RetroPanel%20Front/README.md#3-bom). Remembering that we earlier set some jumpers according to the display that was used, also - we remembered to use a latching power switch if we had decided against installing the smart switch circuit (momentary switch when it is used). As this needs to be added correctly, consider checking out the [assembly](https://youtu.be/NcJ1v0hauTQ?t=978)-video to see this chapter in action first.
+
+[![YouTube image](https://github.com/tebl/RetroPanel/raw/main/gallery/youtube_clip_assembling_front.jpg)](https://youtu.be/NcJ1v0hauTQ?t=978)
 
 With a completed front panel in front of you, it should easily slot into the main PCB - some resistance due to slightly crooked right-angle pin can be expected, but it shouldn't be an issue if you did your job well. When soldering it to the main board, just start with the opposing corners and ensure that it is at an almost perfect **90 degree angle**. While that sounds like something that'd be hard to do, you can easily use the sharp angle on your two side panels to check.
 
@@ -79,6 +85,8 @@ When satisfied, solder the remaining pins. Using your most solid wire clippers t
 
 ## 1.3> Adding side panels
 Start by adding some screws to each of the four corners of the PCB, with the nut on the underside - the screw should be loose, and **NOT** poke through the bottom of the nuts. You may need to temporarily remove the hex standoffs from the front panel in order to access these.
+
+[![YouTube image](https://github.com/tebl/RetroPanel/raw/main/gallery/youtube_clip_assembling_side.jpg)](https://youtu.be/NcJ1v0hauTQ?t=1027)
 
 On each of the outside edges there is a cutout for another M3 nylon nut, with two of the flat edges inserted so that it'll sit flush with interior edges of the PCB (use a small set of pliers, if you're having a rough time of it with large fingers). Rougly put one of the side panels into place, inserting a short M3 screw from the outside into this middle groove - it should grab onto the nut and pull the side panel firmly into place. You may need to hold a finger on the underside to keep the nut from falling through, it's a bit fiddly though you'll soon get the hang of it. Do the same for the other side.
 
