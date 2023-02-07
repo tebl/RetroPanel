@@ -4,7 +4,7 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "RetroPanel (Faceplate FP1)"
+Title "RetroPanel SD35VC0 (Faceplate FP1)"
 Date ""
 Rev "A"
 Comp ""
